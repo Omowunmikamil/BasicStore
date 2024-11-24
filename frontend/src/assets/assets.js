@@ -21,7 +21,7 @@ import iphone15ProMax2 from "./iphone15promax-2.png";
 import iphone15ProMax3 from "./iphone15ppromax-3.png";
 
 // Insta Shop Items
-import instaShop1 from "./insta-shop1.png";
+import instaShop1 from "./insta-shop-1.png";
 import instaShop2 from "./insta-shop-2.png";
 import instaShop3 from "./insta-shop-3.png";
 import instaShop4 from "./insta-shop-4.png";
@@ -32,9 +32,13 @@ import hero1 from "./hero1.png";
 import hero2 from "./hero2.png";
 import hero3 from "./hero3.png";
 
+// images
 import logo from "./logo.svg";
 import subcribeBg from "./subscribe-bg.png";
 import pageHeaderBg from "./page-header-bg.png";
+import search from "./search.svg";
+import cart from "./cart.svg";
+import profile from "./profile.svg";
 
 // Latest Blog Posts
 import blogImg from "./blog-img-1.png";
@@ -58,16 +62,19 @@ import aboutImg from "./about-img.png";
 // Contact Us image
 import contactImg from "./contact.png";
 
-const assets = {
+export const assets = {
   logo,
   aboutImg,
   contactImg,
   subcribeBg,
   pageHeaderBg,
+  profile,
+  cart,
+  search,
 };
 
 // Shop Categories
-const ourShopCategorie = [
+export const ourShopCategorie = [
   {
     image: [airpods],
     name: "Air Pods",
@@ -87,7 +94,7 @@ const ourShopCategorie = [
 ];
 
 // Shop products
-const products = [
+export const products = [
   {
     _id: "aaaaa",
     name: "Sony PlayStation Move",
@@ -221,4 +228,10 @@ const products = [
 ];
 
 // Insta Shop
-const InstaShop = [instaShop1, instaShop2, instaShop3, instaShop4, instaShop5];
+export const InstaShop = [
+  instaShop1,
+  instaShop2,
+  instaShop3,
+  instaShop4,
+  instaShop5,
+];
