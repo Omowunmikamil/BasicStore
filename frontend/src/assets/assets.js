@@ -71,6 +71,9 @@ export const assets = {
   profile,
   cart,
   search,
+  hero1,
+  hero2,
+  hero3,
 };
 
 // Shop Categories
