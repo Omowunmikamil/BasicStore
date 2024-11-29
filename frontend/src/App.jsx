@@ -8,7 +8,8 @@ import Pages from "./pages/Pages";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-import Product from "./pages/product";
+import Product from "./pages/Product";
+import PlaceOrder from "./pages/PlaceOrder";
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
           <Route path="/pages" element={<Pages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product/:productId" element={<Product />} />
+          <Route path="/place-order" element={<PlaceOrder />} />
         </Routes>
       </div>
     </div>

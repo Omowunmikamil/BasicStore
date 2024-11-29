@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h2 {
+    @apply my-5 text-gray-700 text-2xl text-center font-bold;
+  }
+}
+
 * {
   font-family: Plus Jakarta Sans;
 }

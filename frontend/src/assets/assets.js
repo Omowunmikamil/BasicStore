@@ -1,6 +1,6 @@
 // Our Categories
-import airpods from "./air-pods.png";
-import swatchs from "./smart-watches.png";
+import airpod from "./air-pods.png";
+import swatch from "./smart-watches.png";
 import laptop from "./laptops.png";
 import mobilePhone from "./mobile-phones.png";
 
@@ -77,22 +77,26 @@ export const assets = {
 };
 
 // Shop Categories
-export const ourShopCategorie = [
+export const ourShopCategories = [
   {
-    image: [airpods],
+    image: airpod,
     name: "Air Pods",
+    items: "(6 items)",
   },
   {
-    image: [swatchs],
+    image: swatch,
     name: "Smart watches",
+    items: "(12 items)",
   },
   {
-    image: [laptop],
+    image: laptop,
     name: "Laptops",
+    items: "(3 items)",
   },
   {
-    image: [mobilePhone],
+    image: mobilePhone,
     name: "Mobile phones",
+    items: "(9 items)",
   },
 ];
 

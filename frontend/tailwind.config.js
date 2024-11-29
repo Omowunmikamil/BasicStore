@@ -6,6 +6,8 @@ export default {
       colors: {
         saleBg: "#FFEBD2",
         orange: "#F4890A",
+        bestBg: "#F6F6F6",
+        bestBorder: "#E8E8E8",
       },
 
       backgroundImage: {
