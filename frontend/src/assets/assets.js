@@ -39,6 +39,7 @@ import pageHeaderBg from "./page-header-bg.png";
 import search from "./search.svg";
 import cart from "./cart.svg";
 import profile from "./profile.svg";
+import stars from "./Stars.png";
 
 // Latest Blog Posts
 import blogImg from "./blog-img-1.png";
@@ -74,6 +75,7 @@ export const assets = {
   hero1,
   hero2,
   hero3,
+  stars,
 };
 
 // Shop Categories

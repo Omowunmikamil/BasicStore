@@ -2,6 +2,7 @@ import Banners from "../components/Banners";
 import BestSeller from "../components/BestSeller";
 import Hero from "../components/Hero";
 import ShopCategory from "../components/ShopCategory";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <ShopCategory />
       <BestSeller />
       <Banners />
+      <Testimonials />
     </div>
   );
 };
