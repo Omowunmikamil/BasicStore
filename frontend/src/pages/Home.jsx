@@ -1,3 +1,4 @@
+import Banners from "../components/Banners";
 import BestSeller from "../components/BestSeller";
 import Hero from "../components/Hero";
 import ShopCategory from "../components/ShopCategory";
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <ShopCategory />
       <BestSeller />
+      <Banners />
     </div>
   );
 };
