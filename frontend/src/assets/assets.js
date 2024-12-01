@@ -75,6 +75,21 @@ export const assets = {
   hero1,
   hero2,
   hero3,
+  // Reviews
+  reviews: [
+    {
+      author: "Emma Chamberlin",
+      text: "“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi.”",
+    },
+    {
+      author: "Thomas John",
+      text: "“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi.”",
+    },
+    {
+      author: "Kevin Bryan",
+      text: "“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi.”",
+    },
+  ],
   stars,
 };
 
