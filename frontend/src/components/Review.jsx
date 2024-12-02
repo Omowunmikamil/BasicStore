@@ -31,7 +31,7 @@ const Review = () => {
       >
         {assets.reviews.map((review, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col justify-center items-start py-8 px-10 w-full md:w-[22.5rem] bg-white rounded-xl shadow-md border border-tesBorder">
+            <div className="flex flex-col justify-center items-start py-8 px-10 w-full lg:w-[22.5rem] bg-white rounded-xl shadow-md border border-tesBorder">
               <p className="text-sm text-gray-500">{review.text}</p>
               <img src={assets.stars} alt="Stars" className="w-20 mt-5 mb-1" />
               <p className="text-xs font-bold">{review.author}</p>
