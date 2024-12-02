@@ -10,10 +10,23 @@ const Review = () => {
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={50}
-        slidesPerView={3}
         pagination={{ clickable: true, el: ".custom-pagination" }}
         loop={true}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
+        breakpoints={{
+          // When the screen width is >= 1024px (Large screens)
+          1024: {
+            slidesPerView: 3,
+          },
+          // When the screen width is >= 768px (Medium screens)
+          768: {
+            slidesPerView: 2,
+          },
+          // When the screen width is < 768px (Small screens)
+          0: {
+            slidesPerView: 1,
+          },
+        }}
         className="review-swiper relative"
       >
         {assets.reviews.map((review, index) => (
