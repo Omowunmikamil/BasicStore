@@ -63,6 +63,13 @@ import aboutImg from "./about-img.png";
 // Contact Us image
 import contactImg from "./contact.png";
 
+// Socials
+import facebook from "./facebook.svg";
+import twitter from "./twiter.svg";
+import instagram from "./instagram.svg";
+import linkedin from "./linkedin.svg";
+import youtube from "./youtube.svg";
+
 export const assets = {
   logo,
   aboutImg,
@@ -75,6 +82,12 @@ export const assets = {
   hero1,
   hero2,
   hero3,
+  facebook,
+  twitter,
+  instagram,
+  linkedin,
+  youtube,
+
   // Reviews
   reviews: [
     {
@@ -83,6 +96,14 @@ export const assets = {
     },
     {
       author: "Thomas John",
+      text: "“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi.”",
+    },
+    {
+      author: "Kevin Bryan",
+      text: "“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi.”",
+    },
+    {
+      author: "Kevin Bryan",
       text: "“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi.”",
     },
     {

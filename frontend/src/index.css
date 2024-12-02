@@ -28,3 +28,14 @@ a.active {
 .hero-swiper .swiper-pagination-bullet-active {
   background-color: #fff;
 }
+
+.review-swiper .swiper-pagination-bullet {
+  background-color: #f4890a;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.review-swiper .swiper-pagination-bullet-active {
+  background-color: #f4890a;
+}
