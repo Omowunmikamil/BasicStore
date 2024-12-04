@@ -4,11 +4,11 @@ function Footer() {
   return (
     <div>
       {/* Main layout of the footer section */}
-      <div className="flex flex-col sm:grid grid-cols-[2fr_1fr_1fr_1fr] gap-14 my-10 mt-28 text-sm">
+      <div className="flex flex-col lg:grid grid-cols-[2fr_1fr_1fr_1fr] gap-14 my-10 mt-28 text-sm">
         {/* Logo and company description */}
         <div>
           <img src={assets.logo} className="w-28 mb-5" alt="Company Logo" />
-          <p className="w-full md:w-2/3 text-gray-600 md:line-clamp-4">
+          <p className="w-full md:w-2/3 text-gray-600 text-xs md:text-sm">
             Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
             Gravida massa volutpat aenean odio erat nullam fringilla.
           </p>
@@ -46,19 +46,19 @@ function Footer() {
           <p className="text-xl font-medium mb-5">Quick Links</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             {/* List of company-related links with hover animation */}
-            <li className="hover:translate-x-2 ease-in-out duration-300">
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
               HOME
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
               ABOUT
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
               SHOP
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
               BLOGS
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
               CONTACT
             </li>
           </ul>
@@ -69,34 +69,40 @@ function Footer() {
           <p className="text-xl font-medium mb-5">Help & Info</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             {/* List of company-related links with hover animation */}
-            <li className="hover:translate-x-2 ease-in-out duration-300">
-              Track Your Order
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              TRACK YOUR ORDER
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
-              Returns policies
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              RETURN POLICIES
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
-              SHOP
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              SHIPPING + DELIVERY
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
-              BLOGS
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              CONTACT US
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
-              CONTACT
+            <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              FAQS
             </li>
           </ul>
         </div>
 
         {/* Contact information section */}
         <div>
-          <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
+          <p className="text-xl font-medium mb-5">Contact Us</p>
           <ul className="flex flex-col gap-1 text-gray-600 text-sm">
             {/* Contact details with hover animation */}
-            <li className="hover:translate-x-2 ease-in-out duration-300">
-              +2348138777481
+            <li className="hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              Do you have any queries or suggestions?
             </li>
-            <li className="hover:translate-x-2 ease-in-out duration-300">
+            <li className="hover:text-orange hover:translate-x-2 ease-in-out duration-300">
               balikiskamil@gmail.com
+            </li>
+            <li className="hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              If you need support? Just give us a call.
+            </li>
+            <li className="hover:text-orange hover:translate-x-2 ease-in-out duration-300">
+              +2348138777481
             </li>
           </ul>
         </div>
@@ -105,10 +111,38 @@ function Footer() {
       {/* Footer bottom section */}
       <div>
         <hr /> {/* Divider line */}
-        <p className="text-center text-gray-500 text-sm py-5">
-          Copyright 2024&copy; forever.com - All Rights Reserved. Designed by
-          Omowunmi.
-        </p>
+        <div className="flex flex-col lg:flex-row justify-e  lg:justify-between lg:items-center">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-full lg:w-[40%]">
+            <div className="flex justify-center">
+              <p className="flex text-center text-gray-500 text-sm py-2 mr-1 font-medium">
+                We ship with:
+              </p>
+              <div className="flex items-center">
+                <img src={assets.dhl} alt="DHL" className="" />
+                <img src={assets.arcticons} alt="Arcticons" className="ml-2" />
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <p className="text-gray-500 text-sm py-2 mr-1 font-medium">
+                Payment options:
+              </p>
+              <div className="flex items-center">
+                <img src={assets.visa} alt="Visa" className="w-8" />
+                <img
+                  src={assets.mastercard}
+                  alt="Mastercard"
+                  className="mx-2 w-8"
+                />
+                <img src={assets.paypal} alt="Paypal" className="w-8" />
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-gray-500 text-sm py-5">
+            &copy;Copyright 2024 BasicStore. Designed by Omowunmi.
+          </p>
+        </div>
       </div>
     </div>
   );

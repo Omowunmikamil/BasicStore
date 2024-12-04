@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import ProductItem from "./ProductItem";
-import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const BestSeller = () => {
   // Accessing the product data from ShopContext
-  const { products } = useContext(ShopContext);
-  const navigate = useNavigate();
+  const { products, navigate } = useContext(ShopContext);
 
   // State to store the filtered best-selling products
   const [bestSellers, setBestSellers] = useState([]);
@@ -42,12 +41,7 @@ const BestSeller = () => {
       </div>
 
       <div className="flex justify-center my-8">
-        <button
-          onClick={navigateToShop}
-          className="text-xs md-text-sm text-white bg-gray-800 py-2 px-4 rounded-full hover:bg-gray-600"
-        >
-          GO TO SHOP
-        </button>
+        <Button onClick={navigateToShop} text={"GO TO SHOP"} />
       </div>
     </div>
   );

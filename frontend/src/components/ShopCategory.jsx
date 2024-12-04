@@ -7,7 +7,7 @@ const ShopCategory = () => {
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 gap-6 gap-y-6">
         {ourShopCategories && ourShopCategories.length > 0 ? (
           ourShopCategories.map((category, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div key={index} className="flex flex-col">
               <img
                 src={category.image}
                 alt={category.name}
@@ -16,9 +16,9 @@ const ShopCategory = () => {
               <h2 className="text-center text-sm sm:text-base font-semibold text-gray-700 mt-2">
                 {category.name}
               </h2>
-              <p className="text-xs md:text-sm font-extralight text-gray-500">
+              {/*<p className="text-xs md:text-sm font-light text-gray-500">
                 {category.items}
-              </p>
+              </p>*/}
             </div>
           ))
         ) : (

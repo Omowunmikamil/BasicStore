@@ -51,6 +51,8 @@ import blogImg4 from "./blog-img-4.png";
 import blogImg5 from "./blog-img-5.png";
 import blogImg6 from "./blog-img-6.png";
 import blogImg7 from "./blog-img-7.png";
+import blogImg8 from "./music.png";
+import blogImg9 from "./work-space.png";
 
 // Latest Posts
 import smallCamera from "./small-camera.png";
@@ -70,6 +72,17 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import youtube from "./youtube.svg";
 
+// Shipments Methods
+import dhl from "./dhl.svg";
+import arcticons from "./arcticons.svg";
+
+// Payments Methods
+import visa from "./visa.svg";
+import mastercard from "./mastercard.svg";
+import paypal from "./paypal.svg";
+
+// Categories
+
 export const assets = {
   logo,
   aboutImg,
@@ -87,6 +100,11 @@ export const assets = {
   instagram,
   linkedin,
   youtube,
+  dhl,
+  arcticons,
+  visa,
+  mastercard,
+  paypal,
 
   // Reviews
   reviews: [
@@ -135,6 +153,86 @@ export const ourShopCategories = [
     image: mobilePhone,
     name: "Mobile phones",
     items: "(9 items)",
+  },
+];
+
+// Blog Posts
+export const blogPosts = [
+  {
+    _id: "aaaaaa",
+    image: blogImg,
+    blogInfo: "Feb 22, 2024  -  Technology",
+    title: "Technology Hack That You Don’t Know",
+    latestpost: true,
+  },
+  {
+    _id: "aaaaab",
+    image: blogImg2,
+    blogInfo: "Feb 22, 2024  -  Watches",
+    title: "Best Digital Watches To Buy In This Year",
+    latestpost: true,
+  },
+  {
+    _id: "aaaaac",
+    image: blogImg3,
+    blogInfo: "feb 22, 2024  -  Gadgets",
+    title: "How To Use Gimbal To Take Video",
+    latestpost: true,
+  },
+  {
+    _id: "aaaaac",
+    image: blogImg4,
+    blogInfo: "Feb 22, 2024  -  Gadget",
+    title: "Best Airpod That You Must Get It",
+  },
+  {
+    _id: "aaaaad",
+    image: blogImg5,
+    blogInfo: "Feb 22, 2024  -  Phones",
+    title: "Why People are Obsessed With Iphones",
+  },
+  {
+    _id: "aaaaae",
+    image: blogImg6,
+    blogInfo: "Feb 22, 2024  -  Gadget",
+    title: "How To Setup Your GoPro",
+  },
+  {
+    _id: "aaaaaf",
+    image: blogImg7,
+    blogInfo: "Feb 22, 2024  -  Technology",
+    title: "Why People Are Buying These PlayStations",
+  },
+  {
+    _id: "aaaaag",
+    image: blogImg8,
+    blogInfo: "Feb 22, 2024  -  Laptops",
+    title: "You Just Need To Use This Headset To Listen To Music",
+  },
+  {
+    _id: "aaaaah",
+    image: blogImg9,
+    blogInfo: "Feb 22, 2024  -  Gadgets",
+    title: "Make Your Working Space Need And Clean",
+  },
+];
+
+//Othere Posts
+export const otherPosts = [
+  {
+    _id: "aaaaai",
+    image: smallCamera,
+    title: "Top 10 small cameras in the world",
+  },
+  {
+    _id: "aaaaaj",
+    image: techHack,
+    title: "Technology hack that you don’t know",
+  },
+  {
+    _id: "aaaaak",
+    image: coolGadgets,
+    title: "Get some cool gadgets in this year",
   },
 ];
 
