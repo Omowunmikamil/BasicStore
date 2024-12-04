@@ -12,9 +12,6 @@ export default {
       },
 
       backgroundImage: {
-        hero1: "url('./src/assets/hero1.png')",
-        hero2: "url('./src/assets/hero2.png')",
-        hero3: "url('./src/assets/hero3.png')",
         headerImg: "url('./src/assets/page-header-bg.png')",
         subcribeImg: "url('./src/assets/subscribe-bg.png')",
       },

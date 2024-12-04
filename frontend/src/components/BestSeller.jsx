@@ -24,7 +24,7 @@ const BestSeller = () => {
   }, [products]); // Adding `products` as a dependency to run this effect when `products` changes
 
   return (
-    <div className="my-10">
+    <div className="mt-20">
       <h2>Best Selling Items</h2>
 
       {/* Rendering Latest Collection Products */}

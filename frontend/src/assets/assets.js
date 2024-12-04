@@ -81,7 +81,11 @@ import visa from "./visa.svg";
 import mastercard from "./mastercard.svg";
 import paypal from "./paypal.svg";
 
-// Categories
+// Policy
+import policyCart from "./solar_cart.svg";
+import chat from "./solar_chat.svg";
+import cup from "./solar_cup.svg";
+import tag from "./solar_tag.svg";
 
 export const assets = {
   logo,
@@ -105,6 +109,10 @@ export const assets = {
   visa,
   mastercard,
   paypal,
+  policyCart,
+  cup,
+  chat,
+  tag,
 
   // Reviews
   reviews: [

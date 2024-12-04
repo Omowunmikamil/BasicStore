@@ -17,7 +17,7 @@ const LatestPosts = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-20">
       <h2>Latest Posts</h2>
       <div className="flex flex-col md:flex-row gap-5">
         {latestposts.map((item, index) => (

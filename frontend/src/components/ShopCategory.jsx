@@ -2,7 +2,7 @@ import { ourShopCategories } from "../assets/assets";
 
 const ShopCategory = () => {
   return (
-    <div className="my-10">
+    <div className="mt-20">
       <h2>Our Categories</h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 gap-6 gap-y-6">
         {ourShopCategories && ourShopCategories.length > 0 ? (

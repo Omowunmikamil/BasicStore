@@ -11,10 +11,13 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import PlaceOrder from "./pages/PlaceOrder";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <div>
+      <ToastContainer />
       <SalesHearder />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <Navbar />

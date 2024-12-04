@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const Banners = () => {
   return (
-    <div className="my-14 relative">
+    <div className="mt-20 relative">
       <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 my-6">
         <div className="flex justify-center h-[260px] md:h-[400px]">
           <img
