@@ -7,7 +7,11 @@ function Footer() {
       <div className="flex flex-col lg:grid grid-cols-[2fr_1fr_1fr_1fr] gap-14 my-10 mt-28 text-sm">
         {/* Logo and company description */}
         <div>
-          <img src={assets.logo} className="w-28 mb-5" alt="Company Logo" />
+          <img
+            src={assets.logo}
+            className="w-28 mb-5 mt-2"
+            alt="Company Logo"
+          />
           <p className="w-full md:w-2/3 text-gray-600 text-xs md:text-sm">
             Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
             Gravida massa volutpat aenean odio erat nullam fringilla.

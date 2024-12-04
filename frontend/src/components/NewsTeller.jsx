@@ -16,13 +16,15 @@ const NewsTeller = (e) => {
       />
 
       <div className="absolute z-10 top-0 bottom-0 w-full text-white flex flex-col justify-center">
-        <h2 className="text-white text-3xl mb-1">Subscribe Us Now</h2>
+        <h2 className="text-white text-xl md:text-3xl mb-1">
+          Subscribe Us Now
+        </h2>
         <p className="text-gray-100 text-center text-sm md:text-base">
           Get Latest News, Updates And Deals Directly Mailed To Your Inbox.
         </p>
 
         <form
-          className="w-full w-11/12 sm:w-2/5 h-12 flex items-center gap-3 mx-auto my-6 pl-4 rounded-lg bg-white"
+          className="w-11/12 md:w-8/12 lg:w-2/5  h-12 flex items-center gap-3 mx-auto my-6 pl-4 rounded-lg bg-white"
           onSubmit={handelFormSubmition}
         >
           <input

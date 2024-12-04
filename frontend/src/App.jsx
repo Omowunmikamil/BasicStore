@@ -13,6 +13,8 @@ import PlaceOrder from "./pages/PlaceOrder";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NewsTeller from "./components/NewsTeller";
+import InstaShop from "./components/InstaShop";
 
 const App = () => {
   return (
@@ -33,6 +35,8 @@ const App = () => {
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/place-order" element={<PlaceOrder />} />
         </Routes>
+        <NewsTeller />
+        <InstaShop />
         <Footer />
       </div>
     </div>

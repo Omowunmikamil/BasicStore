@@ -379,10 +379,12 @@ export const products = [
 ];
 
 // Insta Shop
-export const InstaShop = [
-  instaShop1,
-  instaShop2,
-  instaShop3,
-  instaShop4,
-  instaShop5,
+export const instaItems = [
+  {
+    image: instaShop1,
+  },
+  { image: instaShop2 },
+  { image: instaShop3 },
+  { image: instaShop4 },
+  { image: instaShop5 },
 ];
