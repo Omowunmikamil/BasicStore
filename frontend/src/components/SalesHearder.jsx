@@ -11,7 +11,7 @@ const SalesHeader = () => {
       </div>
 
       {/* Mobile/Tablet view with Marquee pinned at the top */}
-      <div className="bg-saleBg bg-opacity-60 backdrop-blur-md px-2 py-2 z-30 w-full lg:hidden">
+      <div className="bg-saleBg bg-opacity-60 backdrop-blur-md px-2 py-2 z-10 w-full lg:hidden">
         <Marquee speed={50} gradient={false}>
           <div className="flex items-center text-gray-700 font-light text-xs mr-6">
             <p className="whitespace-nowrap mx-6">

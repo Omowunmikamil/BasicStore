@@ -1,9 +1,8 @@
-import React from "react";
 import { instaItems } from "../assets/assets";
 
 const InstaShop = () => {
   return (
-    <div className="mt-20">
+    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] mt-20">
       <h2>Shop Our Insta</h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-col-3 lg:grid-cols-5 gap-6 gap-y-6">
         {instaItems && instaItems.length > 0 ? (

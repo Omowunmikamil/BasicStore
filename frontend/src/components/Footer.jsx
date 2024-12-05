@@ -2,7 +2,7 @@ import { assets } from "../assets/assets";
 
 function Footer() {
   return (
-    <div>
+    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       {/* Main layout of the footer section */}
       <div className="flex flex-col lg:grid grid-cols-[2fr_1fr_1fr_1fr] gap-14 my-10 mt-28 text-sm">
         {/* Logo and company description */}

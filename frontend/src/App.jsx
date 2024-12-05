@@ -21,7 +21,7 @@ const App = () => {
     <div>
       <ToastContainer />
       <SalesHearder />
-      <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+      <div className="">
         <Navbar />
         {/* Main Content */}
         <Routes>
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/pages" element={<Pages />} />
+          <Route path="/pages/:blogId" element={<Pages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/product/:productId" element={<Product />} />
