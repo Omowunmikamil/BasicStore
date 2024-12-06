@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import HerderBanner from "../components/HerderBanner";
 import { ShopContext } from "../context/ShopContext";
+import ProductItem from "../components/ProductItem";
 
 const Shop = () => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -10,7 +11,7 @@ const Shop = () => {
   const [sortCategory, setSortCategory] = useState([]); // For storing selected categories
   const [sortSubCategory, setSortSubCategory] = useState([]); // For storing selected subcategories
   const [sortBrand, setSortBrand] = useState([]); // For storing selected brands
-  const [sortType, setSortType] = useState("Default sorting"); // Default sorting type ("relevant")
+  const [sortType, setSortType] = useState("default-sorting"); // Default sorting type ("relevant")
 
   // Handle toggling of categories
   const toggleCategory = (event) => {
@@ -84,7 +85,7 @@ const Shop = () => {
   const sortProducts = () => {
     let filterProductsCopy = filterProducts.slice(); // filter products by category name
 
-    switch (sorttype) {
+    switch (sortType) {
       case "low-high":
         setFilterProducts(filterProductsCopy.sort((a, b) => a.price < b.price));
         break;
@@ -107,13 +108,46 @@ const Shop = () => {
   // Run sorting when the sorting type changes
   useEffect(() => {
     sortProducts();
-  }, [sorttype]);
+  }, [sortType]);
 
   return (
-    <div>
+    <div className="mt-20">
       <HerderBanner h1={"Shop"} text1={"Home"} text2={"Shop"} />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-        <div className="">{}</div>
+        <div className="flex flex-col lg:flex-row gap-1 sm:gap-10 pt-10">
+          {/* left side */}
+          <div className="flex-1">
+            <div className="flex flex-col sm:flex-row justify-between text-sm text-gray-500 mb-4">
+              <p className="">Showing 1-9 of 55 results</p>
+
+              {/* Sort Product By */}
+              <select onChange={(e) => setSortType(e.target.value)}>
+                <option value="default-sorting" className="">
+                  Sort by: Default sorting
+                </option>
+                <option value="low-high" className="">
+                  Sort by: Low to High
+                </option>
+                <option value="high-low" className="">
+                  Sort by: High to Low
+                </option>
+              </select>
+            </div>
+
+            {/* Displaying Filtered and Sorted Products */}
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-6">
+              {filterProducts.map((item, index) => (
+                <ProductItem
+                  key={index}
+                  id={item._id}
+                  image={item.image}
+                  name={item.name}
+                  price={item.price}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
