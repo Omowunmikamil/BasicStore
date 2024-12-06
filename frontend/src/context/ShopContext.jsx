@@ -9,6 +9,9 @@ const ShopContextProvider = (props) => {
   // Initialize the products state with the imported array
   const [products, setProducts] = useState(productData);
   const [blogPosts, setBlogPost] = useState(blogPostsData);
+  const [search, setSearch] = useState(" ");
+  const [showSearch, setShowSearch] = useState(false);
+  const [cartItems, setCartItems] = useState({});
 
   const navigate = useNavigate();
 
@@ -30,6 +33,11 @@ const ShopContextProvider = (props) => {
     deliveryFee,
     navigate,
     blogPosts,
+    search,
+    setSearch,
+    showSearch,
+    setShowSearch,
+    cartItems,
   };
 
   return (
