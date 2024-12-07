@@ -40,6 +40,8 @@ import search from "./search.svg";
 import cart from "./cart.svg";
 import profile from "./profile.svg";
 import stars from "./Stars.png";
+import dropdown from "./dropdown_icon.png";
+import searchWhite from "./search-white.svg";
 
 // Latest Blog Posts
 import blogImg from "./blog-img-1.png";
@@ -113,6 +115,8 @@ export const assets = {
   cup,
   chat,
   tag,
+  dropdown,
+  searchWhite,
 
   // Reviews
   reviews: [
