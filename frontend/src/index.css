@@ -18,6 +18,10 @@ a.active {
   color: #f4890a;
 }
 
+li > a.active {
+  color: #f4890a;
+}
+
 .hero-swiper .swiper-pagination-bullet {
   background-color: #fff;
   border-radius: 50%;

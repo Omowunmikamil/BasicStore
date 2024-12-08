@@ -12,7 +12,54 @@ const Shop = () => {
   const [sortCategory, setSortCategory] = useState([]); // For storing selected categories
   const [sortSubCategory, setSortSubCategory] = useState([]); // For storing selected subcategories
   const [sortBrand, setSortBrand] = useState([]); // For storing selected brands
-  const [sortType, setSortType] = useState("default-sorting"); // Default sorting type ("relevant")
+  const [sortType, setSortType] = useState("default-sorting"); // Default sorting type ("default-sorting")
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1); // For pagination
+  const [from, setFrom] = useState(1); // For pagination
+  const [previousState, setPreviousState] = useState(false); // For pagination
+  const [nextState, setNextState] = useState(false); // For pagination
+  const [to, setTo] = useState(9); // For pagination
+  const [productsPerPage] = useState(9); // Number of products per page
+  const lastIndex = currentPage * productsPerPage; // Last product index on the current page
+  const firstIndex = lastIndex - productsPerPage; // First product index on the current page
+  const records = filterProducts.slice(firstIndex, lastIndex); // Products to display on the current page
+  const totalPages = Math.ceil(filterProducts.length / productsPerPage); // Total number of pages
+  const numbers = [...Array(totalPages + 1).keys()].slice(1); // Array of page numbers
+
+  // Pagination functions
+  const prevPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+      setFrom(from - productsPerPage);
+      setTo(to - productsPerPage);
+      setPreviousState(true);
+      setNextState(false);
+    }
+  };
+
+  const nextPage = () => {
+    if (currentPage !== totalPages) {
+      setCurrentPage(currentPage + 1);
+      setTo(to + productsPerPage);
+      setFrom(from + productsPerPage);
+      setPreviousState(false);
+      setNextState(true);
+    }
+  };
+
+  const changeCurrentPage = (id) => {
+    setCurrentPage(id);
+    setFrom(id * productsPerPage - productsPerPage + 1);
+    setTo(id * productsPerPage);
+  };
+
+  // Handle sorting
+  // const handleSortChange = (event) => {
+  //   setSortType(event.target.value);
+  // };
+
+  // Sort products based on selected category, subcategory, brand, and sorting type
 
   // Handle toggling of categories
   const toggleCategory = (event) => {
@@ -119,7 +166,9 @@ const Shop = () => {
           {/* left side */}
           <div className="flex-1">
             <div className="flex flex-col sm:flex-row justify-between text-sm text-gray-500 mb-4">
-              <p className="">Showing 1-9 of 55 results</p>
+              <p className="">
+                Showing {from}-{to} of {products.length} results
+              </p>
 
               {/* Sort Product By */}
               <select
@@ -140,7 +189,7 @@ const Shop = () => {
 
             {/* Displaying Filtered and Sorted Products */}
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-6">
-              {filterProducts.map((item, index) => (
+              {records.map((item, index) => (
                 <ProductItem
                   key={index}
                   id={item._id}
@@ -150,6 +199,47 @@ const Shop = () => {
                 />
               ))}
             </div>
+            <nav>
+              <ul className="flex justify-center gap-4 mt-16">
+                <li className="text-peg text-base md:text-lg font-bold hover:text-orange">
+                  <a
+                    href="#"
+                    className={`${previousState ? "text-orange" : "text-peg"}`}
+                    onClick={prevPage}
+                  >
+                    Prev
+                  </a>
+                </li>
+                {numbers.map(function (num, index) {
+                  return (
+                    <li
+                      key={index}
+                      className={`page-item text-peg text-base md:text-lg font-bold `}
+                    >
+                      <a
+                        href="#"
+                        // className="page-link text-peg hover:text-orange active:text-orange"
+                        className={`${
+                          num === currentPage ? "text-orange" : "text-peg"
+                        }`}
+                        onClick={() => changeCurrentPage(num)}
+                      >
+                        {num}
+                      </a>
+                    </li>
+                  );
+                })}
+                <li className="text-peg text-base md:text-lg font-bold page-item">
+                  <a
+                    href="#"
+                    className={`${nextState ? "text-orange" : "text-peg"}`}
+                    onClick={nextPage}
+                  >
+                    Next
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           {/* Right Side */}
@@ -193,18 +283,14 @@ const Shop = () => {
               <p className="mb-3 text-base text-text font-medium">Category</p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
                 {/* Category checkboxes */}
-                <p
-                  onClick={toggleCategory}
-                  value={"/"}
-                  className="cursor-pointer"
-                >
-                  All
-                </p>
-                <p
-                  onClick={toggleCategory}
-                  value={"Phones"}
-                  className="cursor-pointer"
-                >
+                <p>All</p>
+                <p className="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    value={"Phone"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
                   Phones
                 </p>
                 <p
@@ -231,13 +317,13 @@ const Shop = () => {
               </div>
             </div>
 
-            {/* Filter by Sub Category */}
+            {/* Filter by Sub Category 
             <div
               className={`py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
             >
               <p className="mb-3 text-base text-text font-medium">Tags</p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
-                {/* Category checkboxes */}
+                {/* Category checkboxes 
                 <p
                   onClick={toggleSubCategory}
                   className="cursor-pointer"
@@ -269,13 +355,13 @@ const Shop = () => {
               </div>
             </div>
 
-            {/* Filter by Brand */}
+            {/* Filter by Brand 
             <div
               className={`py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
             >
               <p className="mb-3 text-base text-text font-medium">Brands</p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
-                {/* Category checkboxes */}
+                {/* Category checkboxes 
                 <p
                   onClick={toggleBrand}
                   className="cursor-pointer"
@@ -305,7 +391,7 @@ const Shop = () => {
                   Watches
                 </p>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

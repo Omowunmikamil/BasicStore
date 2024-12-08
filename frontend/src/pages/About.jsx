@@ -19,11 +19,11 @@ const About = () => {
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <OurPolicies />
         <div className="mt-20">
-          <div className="flex justify-between items-center">
-            <div className="w-[49%]">
+          <div className="flex flex-col lg:flex-row justify-between items-center">
+            <div className="w-full lg:w-[49%]">
               <img src={assets.aboutImg} alt="" className="w-full rounded-xl" />
             </div>
-            <div className="w-[46%]">
+            <div className="w-full lg:w-[46%]">
               <h2 className="text-left mb-2">Best Digital Store BasicStore</h2>
               <p className="text-gray-500 text-[18px]">
                 Risus augue curabitur diam senectus congue velit et. Sed vitae

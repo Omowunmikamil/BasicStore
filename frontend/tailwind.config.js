@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         saleBg: "#FFEBD2",
+        peg: "#F4890A4D",
         orange: "#F4890A",
         bestBg: "#F6F6F6",
         bestBorder: "#E8E8E8",
