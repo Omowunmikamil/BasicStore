@@ -5,7 +5,7 @@ import ProductItem from "../components/ProductItem";
 import { assets } from "../assets/assets";
 
 const Shop = () => {
-  const { products, search, setSearch, showSearch } = useContext(ShopContext);
+  const { products, search, showSearch } = useContext(ShopContext);
 
   const [showFilter, setShowFilter] = useState(false); // For toggling the visibility of filter options
   const [filterProducts, setFilterProducts] = useState([]); // For storing filtered products
@@ -173,9 +173,177 @@ const Shop = () => {
       <HerderBanner h1={"Shop"} text1={"Home"} text2={"Shop"} href={"/shop"} />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] mt-16">
         <div className="flex flex-col lg:flex-row gap-1 sm:gap-10 pt-10">
+          {/* responsive */}
+          <div className="lg:hidden min-w-60 md:min-w-52">
+            <div className="w-full h-12 flex items-center gap-3 pl-2 rounded-lg bg-white border border-tesBorder shadow-md mb-6">
+              <input
+                value={filterSearch}
+                onChange={(e) => setFilterSearch(e.target.value)} // Update the search query as the user types
+                className="flex-1 text-sm w-full sm:flex-1 pl-2 outline-none bg-transparent"
+                type="text"
+                placeholder="Search"
+              />
+              {/* Search icon */}
+              <button
+                className="bg-text text-white text-sm px-6 py-2 rounded-lg h-12"
+                onClick={handleSearch} // Show the search bar
+              >
+                <img
+                  src={assets.searchWhite}
+                  alt="Search Icon"
+                  className="w-5"
+                />
+              </button>
+            </div>
+
+            {/* Filter by Brand */}
+            <p
+              onClick={() => setShowFilter(!showFilter)} // Toggle the filter visibility
+              className="flex items-center text-xl my-2 gap-2 cursor-pointer"
+            >
+              FILTERS
+              <img
+                src={assets.dropdown} // Dropdown icon to show/hide filters
+                className={`lg:hidden h-3 ${
+                  showFilter ? "rotate-90" : " "
+                } animate-ping`} // Rotate the icon when filters are visible
+                alt="dropdown"
+              />
+            </p>
+            {/* Filter by Category */}
+            <div
+              className={` py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
+            >
+              <p className="mb-3 text-base text-text font-medium">Category</p>
+              <div className="flex flex-col gap-2 text-sm font-light text-text">
+                {/* Category checkboxes */}
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Phones"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
+                  Phones
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Accessories"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
+                  Accessories
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Laptop"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
+                  Laptop
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Watches"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
+                  Watches
+                </p>
+              </div>
+            </div>
+
+            {/* Filter by Sub Category */}
+            <div
+              className={`py-3 my-5 ${showFilter ? " " : "hidden"}  lg:block`}
+            >
+              <p className="mb-3 text-base text-text font-medium">Tags</p>
+              <div className="flex flex-col gap-2 text-sm font-light text-text">
+                {/* Subcategory checkboxes */}
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"White"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  White
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Cheap"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  Cheap
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Mobile"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  Mobile
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Modern"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  Modern
+                </p>
+              </div>
+            </div>
+
+            {/* Filter by Brands */}
+            <div
+              className={`py-3 my-5 ${showFilter ? " " : "hidden"}  lg:block`}
+            >
+              <p className="mb-3 text-base text-text font-medium">Brands</p>
+              <div className="flex flex-col gap-2 text-sm font-light text-text">
+                {/* Subcategory checkboxes */}
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Apple"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  Apple
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Samsung"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  Samsung
+                </p>
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Green"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
+                  Green
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* left side */}
           <div className="flex-1">
-            <div className="flex flex-col sm:flex-row justify-between text-sm text-gray-500 mb-4">
+            {/* Showing the number of products displayed in pegination */}
+            <div className="flex justify-between text-xs sm:text-sm text-gray-500 mb-4">
               <p className="">
                 Showing {from}-{to} of {products.length} results
               </p>
@@ -255,7 +423,7 @@ const Shop = () => {
           </div>
 
           {/* Right Side */}
-          <div className="min-w-60 md:min-w-52">
+          <div className="hidden lg:block min-w-60 md:min-w-52">
             <div className="w-full h-12 flex items-center gap-3 pl-2 rounded-lg bg-white border border-tesBorder shadow-md mb-6">
               <input
                 value={filterSearch}
@@ -282,129 +450,136 @@ const Shop = () => {
               className="flex items-center text-xl my-2 gap-2 cursor-pointer"
             >
               FILTERS
-              <img
-                src={assets.dropdown_icon} // Dropdown icon to show/hide filters
-                className={`lg:hidden h-3 ${showFilter ? "rotate-90" : " "}`} // Rotate the icon when filters are visible
-                alt="dropdown"
-              />
             </p>
 
             {/* Filter by Category */}
             <div
-              className={`py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
+              className={` py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
             >
               <p className="mb-3 text-base text-text font-medium">Category</p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
                 {/* Category checkboxes */}
-                <p>All</p>
-                <p className="cursor-pointer">
+                <p className=" flex gap-2">
                   <input
                     type="checkbox"
-                    value={"Phone"}
+                    value={"Phones"}
                     className="w-3"
                     onChange={toggleCategory} // Toggle category selection
                   />
                   Phones
                 </p>
-                <p
-                  onClick={toggleCategory}
-                  value={"Accessories"}
-                  className="cursor-pointer"
-                >
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Accessories"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
                   Accessories
                 </p>
-                <p
-                  onClick={toggleCategory}
-                  value={"Laptop"}
-                  className="cursor-pointer"
-                >
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Laptop"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
                   Laptop
                 </p>
-                <p
-                  onClick={toggleCategory}
-                  value={"Watches"}
-                  className="cursor-pointer"
-                >
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Watches"}
+                    className="w-3"
+                    onChange={toggleCategory} // Toggle category selection
+                  />
                   Watches
                 </p>
               </div>
             </div>
 
-            {/* Filter by Sub Category 
+            {/* Filter by Sub Category */}
             <div
-              className={`py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
+              className={`py-3 my-5 ${showFilter ? " " : "hidden"}  lg:block`}
             >
               <p className="mb-3 text-base text-text font-medium">Tags</p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
-                {/* Category checkboxes 
-                <p
-                  onClick={toggleSubCategory}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
+                {/* Subcategory checkboxes */}
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"White"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
                   White
                 </p>
-                <p
-                  onClick={toggleSubCategory}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Cheap"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
                   Cheap
                 </p>
-                <p
-                  onClick={toggleSubCategory}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Mobile"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
                   Mobile
                 </p>
-                <p
-                  onClick={toggleSubCategory}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Modern"}
+                    className="w-3"
+                    onChange={toggleSubCategory} // Toggle subcategory selection
+                  />
                   Modern
                 </p>
               </div>
             </div>
 
-            {/* Filter by Brand 
+            {/* Filter by Brands */}
             <div
-              className={`py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
+              className={`py-3 my-5 ${showFilter ? " " : "hidden"}  lg:block`}
             >
               <p className="mb-3 text-base text-text font-medium">Brands</p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
-                {/* Category checkboxes 
-                <p
-                  onClick={toggleBrand}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
-                  All
+                {/* Subcategory checkboxes */}
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Apple"}
+                    className="w-3"
+                    onChange={toggleBrand} // Toggle subcategory selection
+                  />
+                  Apple
                 </p>
-                <p
-                  onClick={toggleBrand}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
-                  Phones
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Samsung"}
+                    className="w-3"
+                    onChange={toggleBrand} // Toggle subcategory selection
+                  />
+                  Samsung
                 </p>
-                <p
-                  onClick={toggleBrand}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
-                  Tables
-                </p>
-                <p
-                  onClick={toggleBrand}
-                  className="cursor-pointer"
-                  value={"Watches"}
-                >
-                  Watches
+                <p className=" flex gap-2">
+                  <input
+                    type="checkbox"
+                    value={"Green"}
+                    className="w-3"
+                    onChange={toggleBrand} // Toggle subcategory selection
+                  />
+                  Green
                 </p>
               </div>
-            </div>*/}
+            </div>
           </div>
         </div>
       </div>
