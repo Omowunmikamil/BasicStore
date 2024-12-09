@@ -43,6 +43,7 @@ import stars from "./Stars.png";
 import dropdown from "./dropdown_icon.png";
 import searchWhite from "./search-white.svg";
 import crossIcon from "./cross_icon.png";
+import rate from "./rate.svg";
 
 // Latest Blog Posts
 import blogImg from "./blog-img-1.png";
@@ -119,6 +120,7 @@ export const assets = {
   dropdown,
   searchWhite,
   crossIcon,
+  rate,
 
   // Reviews
   reviews: [
@@ -384,7 +386,7 @@ export const products = [
     bestseller: false,
   },
   {
-    _id: "aaaaa",
+    _id: "aaaak",
     name: "Sony PlayStation Move",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -397,7 +399,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaab",
+    _id: "aaaal",
     name: "GoPro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -410,7 +412,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaac",
+    _id: "aaaam",
     name: "AirPods Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -423,7 +425,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaad",
+    _id: "aaaao",
     name: "Iphone 15 Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -436,7 +438,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaae",
+    _id: "aaaaq",
     name: "Apple MacBook Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -449,7 +451,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaaf",
+    _id: "aaaar",
     name: "Iphone X Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -462,7 +464,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaag",
+    _id: "aaaas",
     name: "PlayStation 5",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -475,7 +477,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaah",
+    _id: "aaaau",
     name: "Gimbal Parts",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -488,7 +490,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaai",
+    _id: "aaaav",
     name: "Watch",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -501,7 +503,7 @@ export const products = [
     bestseller: false,
   },
   {
-    _id: "aaaaj",
+    _id: "aaaaw",
     name: "Iphone 15 Pro Max",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -514,7 +516,7 @@ export const products = [
     bestseller: false,
   },
   {
-    _id: "aaaaa",
+    _id: "aaaax",
     name: "Sony PlayStation Move",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -527,7 +529,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaab",
+    _id: "aaaay",
     name: "GoPro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -540,7 +542,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaac",
+    _id: "aaaaz",
     name: "AirPods Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -553,7 +555,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaad",
+    _id: "aaaba",
     name: "Iphone 15 Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -566,7 +568,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaae",
+    _id: "aaabb",
     name: "Apple MacBook Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -579,7 +581,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaaf",
+    _id: "aaabc",
     name: "Iphone X Pro",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",
@@ -592,7 +594,7 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "aaaag",
+    _id: "aaabd",
     name: "PlayStation 5",
     description:
       "Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus. Diam ultrices maecenas consequat eu tortor orci, cras lectus mauris, cras egestas quam venenatis neque.",

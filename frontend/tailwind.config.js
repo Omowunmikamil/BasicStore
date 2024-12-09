@@ -12,11 +12,6 @@ export default {
         tesBorder: "#f2f2f2",
         text: "#272727",
       },
-
-      backgroundImage: {
-        headerImg: "url('./src/assets/page-header-bg.png')",
-        subcribeImg: "url('./src/assets/subscribe-bg.png')",
-      },
     },
   },
   plugins: [],
