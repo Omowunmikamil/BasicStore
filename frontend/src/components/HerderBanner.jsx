@@ -24,7 +24,7 @@ const HerderBanner = (props) => {
               &gt;
             </span>
             <a
-              href="/about"
+              href={props.href}
               className="text-sm md:text-base text-gray-100 text-center"
             >
               {props.text2}

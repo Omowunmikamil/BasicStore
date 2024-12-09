@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { RiMenu5Line } from "react-icons/ri";
 import { RiCloseLargeFill } from "react-icons/ri";
+import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false); // set menu visibility
+
+  // Context data for controlling search visibility and getting cart count
+  const {
+    setShowSearch,
+    getCartCount,
+    navigate,
+    setToken,
+    token,
+    setCartItems,
+  } = useContext(ShopContext);
 
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
@@ -38,6 +49,7 @@ const Navbar = () => {
               src={assets.search}
               alt="Search"
               className="w-4 sm:w-5 cursor-pointer"
+              onClick={() => setShowSearch(true)}
             />
 
             {/* Profile Dropdown Menu */}

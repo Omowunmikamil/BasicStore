@@ -15,7 +15,12 @@ const About = () => {
 
   return (
     <div className="">
-      <HerderBanner h1={"About Us"} text1={"Home "} text2={" About Us"} />
+      <HerderBanner
+        h1={"About Us"}
+        text1={"Home "}
+        text2={" About Us"}
+        href={"/about"}
+      />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <OurPolicies />
         <div className="mt-20">

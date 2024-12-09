@@ -5,7 +5,7 @@ import ProductItem from "../components/ProductItem";
 import { assets } from "../assets/assets";
 
 const Shop = () => {
-  const { products, search, showSearch } = useContext(ShopContext);
+  const { products, search, setSearch, showSearch } = useContext(ShopContext);
 
   const [showFilter, setShowFilter] = useState(false); // For toggling the visibility of filter options
   const [filterProducts, setFilterProducts] = useState([]); // For storing filtered products
@@ -13,6 +13,7 @@ const Shop = () => {
   const [sortSubCategory, setSortSubCategory] = useState([]); // For storing selected subcategories
   const [sortBrand, setSortBrand] = useState([]); // For storing selected brands
   const [sortType, setSortType] = useState("default-sorting"); // Default sorting type ("default-sorting")
+  const [filterSearch, setFilterSearch] = useState(""); // For storing the search query
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1); // For pagination
@@ -38,6 +39,7 @@ const Shop = () => {
     }
   };
 
+  // Generate page numbers
   const nextPage = () => {
     if (currentPage !== totalPages) {
       setCurrentPage(currentPage + 1);
@@ -48,18 +50,25 @@ const Shop = () => {
     }
   };
 
+  // Change the current page
   const changeCurrentPage = (id) => {
     setCurrentPage(id);
     setFrom(id * productsPerPage - productsPerPage + 1);
     setTo(id * productsPerPage);
   };
 
-  // Handle sorting
-  // const handleSortChange = (event) => {
-  //   setSortType(event.target.value);
-  // };
+  const handleSearch = () => {
+    let productsCopy = products.slice(); // Create a copy of the products array to apply filters on
 
-  // Sort products based on selected category, subcategory, brand, and sorting type
+    // Filter by search query if present
+    if (filterSearch) {
+      productsCopy = productsCopy.filter((item) =>
+        item.name.toLowerCase().includes(filterSearch.toLowerCase())
+      );
+    }
+
+    setFilterProducts(productsCopy);
+  };
 
   // Handle toggling of categories
   const toggleCategory = (event) => {
@@ -101,7 +110,7 @@ const Shop = () => {
     // Filter by search query if present
     if (search && showSearch) {
       productsCopy = productsCopy.filter((item) =>
-        sortCategory.includes(item.category)
+        item.name.toLowerCase().includes(search.toLowerCase())
       );
     }
 
@@ -115,52 +124,53 @@ const Shop = () => {
     // Filter by subcategory if selected
     if (sortSubCategory.length > 0) {
       productsCopy = productsCopy.filter((item) =>
-        sortSubCategory.includes(item.subcategory)
+        sortSubCategory.includes(item.subCategory)
       );
     }
 
     // Filter by brand if selected
     if (sortBrand.length > 0) {
       productsCopy = productsCopy.filter((item) =>
-        sortBrand.includes(item.brand)
+        sortBrand.includes(item.brands)
       );
     }
 
-    setFilterProducts(productsCopy); // update filter products list with filtered products
+    // Update the filtered products state
+    setFilterProducts(productsCopy);
   };
 
-  // Sort the products based on the selected sorting type
+  // Sort the filtered products based on the selected sort type (Low-High, High-Low, or Relevant)
   const sortProducts = () => {
-    let filterProductsCopy = filterProducts.slice(); // filter products by category name
+    let filterProductsCopy = filterProducts.slice(); // Copy the filtered products array
 
     switch (sortType) {
       case "low-high":
-        setFilterProducts(filterProductsCopy.sort((a, b) => a.price < b.price));
+        setFilterProducts(filterProductsCopy.sort((a, b) => a.price - b.price)); // Sort by price low to high
         break;
 
       case "high-low":
-        setFilterProducts(filterProductsCopy.sort((a, b) => a.price > b.price));
+        setFilterProducts(filterProductsCopy.sort((a, b) => b.price - a.price)); // Sort by price high to low
         break;
 
       default:
-        applyFilters();
+        applyFilters(); // Default sort by "relevant" (without changing the order)
         break;
     }
   };
 
-  // Run filters and sorting when any filter or sorting option changes
+  // useEffect hook to apply filters whenever categories, subcategories, or search query changes
   useEffect(() => {
     applyFilters();
-  }, [sortCategory, sortSubCategory, sortBrand, search, showSearch, products]); // sort by category and category name
+  }, [sortCategory, sortSubCategory, sortBrand, search, showSearch, products]);
 
-  // Run sorting when the sorting type changes
+  // useEffect hook to sort the products whenever the sort type changes
   useEffect(() => {
     sortProducts();
   }, [sortType]);
 
   return (
     <div className="">
-      <HerderBanner h1={"Shop"} text1={"Home"} text2={"Shop"} />
+      <HerderBanner h1={"Shop"} text1={"Home"} text2={"Shop"} href={"/shop"} />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] mt-16">
         <div className="flex flex-col lg:flex-row gap-1 sm:gap-10 pt-10">
           {/* left side */}
@@ -199,6 +209,8 @@ const Shop = () => {
                 />
               ))}
             </div>
+
+            {/* Pagination */}
             <nav>
               <ul className="flex justify-center gap-4 mt-16">
                 <li className="text-peg text-base md:text-lg font-bold hover:text-orange">
@@ -244,17 +256,18 @@ const Shop = () => {
 
           {/* Right Side */}
           <div className="min-w-60 md:min-w-52">
-            <form className="w-full h-12 flex items-center gap-3 pl-2 rounded-lg bg-white border border-tesBorder shadow-md mb-6">
+            <div className="w-full h-12 flex items-center gap-3 pl-2 rounded-lg bg-white border border-tesBorder shadow-md mb-6">
               <input
-                type="email"
-                name="email"
+                value={filterSearch}
+                onChange={(e) => setFilterSearch(e.target.value)} // Update the search query as the user types
+                className="flex-1 text-sm w-full sm:flex-1 outline-none bg-transparent"
+                type="text"
                 placeholder="Search"
-                required
-                className="w-full sm:flex-1 outline-none bg-transparent"
               />
+              {/* Search icon */}
               <button
-                type="submit"
                 className="bg-text text-white text-sm px-4 py-2 rounded-lg h-12"
+                onClick={handleSearch} // Show the search bar
               >
                 <img
                   src={assets.searchWhite}
@@ -262,7 +275,7 @@ const Shop = () => {
                   className="w-4"
                 />
               </button>
-            </form>
+            </div>
 
             <p
               onClick={() => setShowFilter(!showFilter)} // Toggle the filter visibility

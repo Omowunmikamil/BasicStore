@@ -15,6 +15,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NewsTeller from "./components/NewsTeller";
 import InstaShop from "./components/InstaShop";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <SalesHearder />
       <div className="">
         <Navbar />
+        <SearchBar />
         {/* Main Content */}
         <Routes>
           <Route exact path="/" element={<Home />} />
