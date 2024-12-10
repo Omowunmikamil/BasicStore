@@ -266,6 +266,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -279,6 +280,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Green",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -292,6 +294,7 @@ export const products = [
     subCategory: "White",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -305,6 +308,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -318,6 +322,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -331,6 +336,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -344,6 +350,7 @@ export const products = [
     subCategory: "White",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -357,6 +364,7 @@ export const products = [
     subCategory: "Cheap",
     brands: "Green",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -370,6 +378,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: false,
   },
   {
@@ -383,6 +392,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: false,
   },
   {
@@ -396,6 +406,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -409,6 +420,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Green",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -422,6 +434,7 @@ export const products = [
     subCategory: "White",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -435,6 +448,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -448,6 +462,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -461,6 +476,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -474,6 +490,7 @@ export const products = [
     subCategory: "White",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -487,6 +504,7 @@ export const products = [
     subCategory: "Cheap",
     brands: "Green",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -500,6 +518,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: false,
   },
   {
@@ -513,6 +532,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: false,
   },
   {
@@ -526,6 +546,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -539,6 +560,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Green",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -552,6 +574,7 @@ export const products = [
     subCategory: "White",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -565,6 +588,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -578,6 +602,7 @@ export const products = [
     subCategory: "Modern",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -591,6 +616,7 @@ export const products = [
     subCategory: "Mobile",
     brands: "Apple",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
   {
@@ -604,6 +630,7 @@ export const products = [
     subCategory: "White",
     brands: "Samsung",
     date: 1716634345448,
+    colors: ["white", "black", "silver", "gray", "blue"],
     bestseller: true,
   },
 ];

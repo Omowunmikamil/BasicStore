@@ -74,7 +74,7 @@ const Navbar = () => {
             <Link to="/cart" className="relative">
               <img src={assets.cart} alt="Cart Icon" className="w-4 sm:w-5" />
               <p className="absolute right-[-5px] bottom-[-5px] leading-4 w-4 items-center bg-orange text-white aspect-square text-[10px] text-center rounded-full">
-                12
+                {getCartCount()}
               </p>
             </Link>
 

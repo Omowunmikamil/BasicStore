@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import NewsTeller from "./components/NewsTeller";
 import InstaShop from "./components/InstaShop";
 import SearchBar from "./components/SearchBar";
+import Order from "./pages/Order";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/place-order" element={<PlaceOrder />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
         <NewsTeller />
         <InstaShop />
