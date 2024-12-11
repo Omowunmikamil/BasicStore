@@ -53,9 +53,9 @@ const Product = () => {
       {/* Product Data */}
       <div className="flex gap-12 flex-col sm:flex-row">
         {/* Product images */}
-        <div className="flex-1 gap-3 flex flex-col-reverse sm:flex-row">
+        <div className="flex-1 gap-3 flex flex-col-reverse ">
           {/* Thumbnail images for selecting the main image */}
-          <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll sm:justify-normal w-full sm:w-[18.7%]">
+          <div className="flex  overflow-x-auto sm:overflow-x-visible sm:justify-normal w-full sm:w-[28%]">
             {productData.image?.map(
               (
                 item,
@@ -71,11 +71,11 @@ const Product = () => {
               )
             )}
           </div>
-          <div className="w-full sm:w-[80%]">
+          <div className="w-full sm:w-[100%] h-[24rem] md:h-[34rem]">
             {/* Display the main image */}
             <img
               src={image}
-              className="w-full h-auto bg-bestBg"
+              className="w-full h-full bg-bestBg"
               alt={productData.name}
             />
           </div>
@@ -168,10 +168,10 @@ const Product = () => {
 
       {/* Description,  Additional Info, and Review */}
       <div className="mt-20">
-        <div className="flex justify-center gap-10 border-b border-tesBorder">
-          <h2 className="text-orange text-xl md:text-2xl">Description</h2>
-          <h2 className=" text-xl md:text-2xl">Additional Infomations</h2>
-          <h2 className=" text-xl md:text-2xl">Reviews (2)</h2>
+        <div className="flex justify-center gap-10 border-b border-tesBorder pb-4">
+          <p className="text-orange text-sm md:text-2xl">Description</p>
+          <p className=" text-sm md:text-2xl">Additional Infomations</p>
+          <p className=" text-sm md:text-2xl">Reviews (2)</p>
         </div>
 
         {/* Descriptions */}
@@ -185,12 +185,10 @@ const Product = () => {
             mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus
             ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer
             ligula vulputate sem tristique cursus.
-          </p>
-          <p className="text-gray-500 text-sm ">
-            &#x25cf; Donec nec justo eget felis facilisis fermentum.
-          </p>
-          <p className="mb-6 text-gray-500 text-sm ">
-            &#x25cf; Suspendisse urna viverra non, semper suscipit pede.
+            <br />
+            &nbsp; &nbsp; &#x25cf; &nbsp; Donec nec justo eget felis facilisis
+            fermentum <br /> &nbsp; &nbsp; &#x25cf; &nbsp; Suspendisse urna
+            viverra non, semper suscipit pede.
           </p>
           <p className="text-gray-500 text-sm ">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
