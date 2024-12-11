@@ -201,6 +201,8 @@ const Product = () => {
           </p>
         </div>
       </div>
+
+      {/* Related Products */}
     </div>
   );
 };
