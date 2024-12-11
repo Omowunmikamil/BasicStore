@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
+import Button from "../components/Button";
 
 const Product = () => {
   const { productId } = useParams(); // Get product ID from the URL params
-  const { products, currency, addToCart, updateCartQuantity } =
+  const { products, currency, addToCart, updateCartQuantity, navigate } =
     useContext(ShopContext); // Get data from ShopContext
   const [productData, setProductData] = useState(false); // State to store the product data
   const [image, setImage] = useState(""); // State for the currently displayed image
@@ -42,14 +43,19 @@ const Product = () => {
     fetchProductData(); // Fetch product data on component mount or when products/productId change
   }, [products, productId]);
 
+  const handleBuyNowNavigate = () => {
+    updateCartQuantity(productData._id, color, counter + 1); // Update the cart
+    navigate("/place-order"); // Navigate to the place order page
+  };
+
   return (
     <div className="border-t-2 transition-opacity ease-in duration-500 opacity-100 pt-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       {/* Product Data */}
-      <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
+      <div className="flex gap-12 flex-col sm:flex-row">
         {/* Product images */}
-        <div className="flex-1 gap-3 flex flex-col-reverse">
+        <div className="flex-1 gap-3 flex flex-col-reverse sm:flex-row">
           {/* Thumbnail images for selecting the main image */}
-          <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal w-full sm:w-[18.7%] ">
+          <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll sm:justify-normal w-full sm:w-[18.7%]">
             {productData.image?.map(
               (
                 item,
@@ -65,11 +71,11 @@ const Product = () => {
               )
             )}
           </div>
-          <div className="w-full sm:w-[100%]">
+          <div className="w-full sm:w-[80%]">
             {/* Display the main image */}
             <img
               src={image}
-              className="w-full h-auto bg-bestBg py-3 px-2"
+              className="w-full h-auto bg-bestBg"
               alt={productData.name}
             />
           </div>
@@ -116,7 +122,7 @@ const Product = () => {
           <div className="flex gap-1 items-center mt-8">
             {/* Decrement button */}
             <button
-              className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-100 rounded-md cursor-pointer hover:border-orange shadow-md"
+              className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
               onClick={decrementHandler}
               disabled={counter === 0}
             >
@@ -124,18 +130,77 @@ const Product = () => {
             </button>
 
             {/* Quantity Display */}
-            <p className="bg-white text-gray-500 text-sm px-6 py-1 font-bold border border-gray-100 rounded-md shadow-md">
+            <p className="bg-white text-gray-500 text-sm px-6 py-1 font-bold border border-gray-50 rounded-md shadow-md">
               {counter}
             </p>
 
             {/* Increment button */}
             <button
-              className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-100 rounded-md cursor-pointer hover:border-orange shadow-md"
+              className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
               onClick={incrementHandler}
             >
               +
             </button>
           </div>
+
+          {/* Buy Now and  Add to Cart Button */}
+          <div className="flex gap-2 mt-4">
+            <button
+              className="bg-orange text-xs md-text-sm text-white py-3 px-8 rounded-full hover:bg-orangehover hover:text-text"
+              onClick={handleBuyNowNavigate}
+            >
+              BUY NOW
+            </button>
+            <Button
+              onClick={() => {
+                addToCart(productData._id, color);
+              }}
+              text={"ADD TO CART"}
+            />
+          </div>
+          <div className="flex flex-col text-gray-400 text-xs gap-1 mt-5">
+            <p className="">SKU: 1223</p>
+            <p className="">2-3 business days delivery & free returns</p>
+            <p className="">Tags: Classic, Modern</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Description,  Additional Info, and Review */}
+      <div className="mt-20">
+        <div className="flex justify-center gap-10 border-b border-tesBorder">
+          <h2 className="text-orange text-xl md:text-2xl">Description</h2>
+          <h2 className=" text-xl md:text-2xl">Additional Infomations</h2>
+          <h2 className=" text-xl md:text-2xl">Reviews (2)</h2>
+        </div>
+
+        {/* Descriptions */}
+        <div className="my-5">
+          <p className="text-sm text-gray-500">Product Description</p>
+          <p className="text-gray-500 text-sm mt-5">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+            Suspendisse urna viverra non, semper suscipit, posuere a, pede.
+            Donec nec justo eget felis facilisis fermentum. Aliquam porttitor
+            mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus
+            ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer
+            ligula vulputate sem tristique cursus.
+          </p>
+          <p className="text-gray-500 text-sm ">
+            &#x25cf; Donec nec justo eget felis facilisis fermentum.
+          </p>
+          <p className="mb-6 text-gray-500 text-sm ">
+            &#x25cf; Suspendisse urna viverra non, semper suscipit pede.
+          </p>
+          <p className="text-gray-500 text-sm ">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+            Suspendisse urna viverra non, semper suscipit, posuere a, pede.
+            Donec nec justo eget felis facilisis fermentum. Aliquam porttitor
+            mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus
+            ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer
+            ligula vulputate sem tristique cursus.
+          </p>
         </div>
       </div>
     </div>
