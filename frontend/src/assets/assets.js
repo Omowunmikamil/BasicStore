@@ -44,6 +44,7 @@ import dropdown from "./dropdown_icon.png";
 import searchWhite from "./search-white.svg";
 import crossIcon from "./cross_icon.png";
 import rate from "./rate.svg";
+import cartCross from "./cart-cross-outline.svg";
 
 // Latest Blog Posts
 import blogImg from "./blog-img-1.png";
@@ -121,6 +122,7 @@ export const assets = {
   searchWhite,
   crossIcon,
   rate,
+  cartCross,
 
   // Reviews
   reviews: [
