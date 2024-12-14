@@ -17,6 +17,7 @@ import NewsTeller from "./components/NewsTeller";
 import InstaShop from "./components/InstaShop";
 import SearchBar from "./components/SearchBar";
 import Order from "./pages/Order";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <NewsTeller />
         <InstaShop />
