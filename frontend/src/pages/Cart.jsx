@@ -47,9 +47,9 @@ const Cart = () => {
       <HerderBanner h1={"Cart"} text1={"Home"} text2={"Cart"} href={"/cart"} />
 
       <div className="mt-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-        <div className="grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] mb-5">
+        <div className="grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] gap-4 mb-5">
           <p className="font-medium text-sm text-text">Product</p>
-          <p className="font-medium text-sm text-text mr-4">Quantity</p>
+          <p className="font-medium text-sm text-text">Quantity</p>
           <p className="font-medium text-sm text-text">Remove</p>
         </div>
 
@@ -63,7 +63,7 @@ const Cart = () => {
               className="text-gray-700 border-t border-b py-4 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
               {/* Product image */}
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 md:gap-6">
                 <img
                   src={productData.image}
                   alt={productData.name}
