@@ -60,7 +60,7 @@ const Product = () => {
         {/* Product images */}
         <div className="flex-1 gap-3 flex flex-col-reverse ">
           {/* Thumbnail images for selecting the main image */}
-          <div className="flex  overflow-x-auto sm:overflow-x-visible sm:justify-normal w-full sm:w-[28%]">
+          <div className="flex overflow-x-auto sm:overflow-x-visible sm:justify-normal w-full sm:w-[28%]">
             {productData.image?.map(
               (
                 item,
@@ -71,12 +71,12 @@ const Product = () => {
                   src={item}
                   alt={productData.name}
                   onClick={() => setImage(item)} // Set the clicked image as the main image
-                  className="w-[24%] sm:h-[190px] sm:w-full bg-bestBg shadow-sm flex-shrink-0 cursor-pointer hover:rounded-xl hover:border-4 hover:border-orange"
+                  className="w-[24%] sm:w-full bg-bestBg shadow-sm flex-shrink-0 cursor-pointer hover:rounded-xl hover:border-4 hover:border-orange"
                 />
               )
             )}
           </div>
-          <div className="w-full sm:w-[100%] h-[24rem] md:h-[34rem]">
+          <div className="w-full sm:w-[100%] h-auto">
             {/* Display the main image */}
             <img
               src={image}
