@@ -63,7 +63,7 @@ const Cart = () => {
               className="text-gray-700 border-t border-b py-4 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
               {/* Product image */}
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-4">
                 <img
                   src={productData.image}
                   alt={productData.name}
@@ -85,7 +85,7 @@ const Cart = () => {
               </div>
 
               {/* Product Quantity */}
-              <div className="flex gap-1 items-center mt-8">
+              <div className="flex gap-1 items-center my-auto">
                 {/* Decrement button */}
                 <button
                   className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
@@ -96,7 +96,7 @@ const Cart = () => {
                 </button>
 
                 {/* Quantity Display */}
-                <p className="bg-white text-gray-500 text-sm px-6 py-1 font-bold border border-gray-50 rounded-md shadow-md">
+                <p className="bg-white text-gray-500 text-sm px-3 md:px-6 py-1 font-bold border border-gray-50 rounded-md shadow-md">
                   {counter}
                 </p>
 
