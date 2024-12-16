@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import HerderBanner from "../components/HerderBanner";
 import { assets } from "../assets/assets";
+import CartTotal from "../components/CartTotal";
 
 const Cart = () => {
   const { products, cartItems, currency, updateCartQuantity, navigate } =
@@ -120,6 +121,7 @@ const Cart = () => {
           );
         })}
       </div>
+      <CartTotal />
     </div>
   );
 };
