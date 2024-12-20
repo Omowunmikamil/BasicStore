@@ -86,6 +86,40 @@ const ShopContextProvider = (props) => {
     setCartItems(cartData); // Update the cart data with the new data
   };
 
+  // Function to calculate total amount of cart items
+  const getCartAmount = () => {
+    let totalAmount = 0;
+
+    // Iterate through each item in the cart
+    for (let items in cartItems) {
+      let itemInfo = products.find((product) => product._id === items);
+      for (let item in cartItems[items]) {
+        try {
+          if (cartItems[items][item] > 0) {
+            totalAmount += itemInfo.price * cartItems[items][item]; // Add the price of the item multiplied by its quantity
+          }
+        } catch (error) {
+          // Handle any errors
+        }
+      }
+    }
+
+    return totalAmount;
+  };
+
+  // Function to search for products
+  const searchProducts = () => {
+    setShowSearch(true);
+  };
+
+  // Function to reset the search
+  const resetSearch = () => {
+    setSearch(" ");
+    setShowSearch(false);
+  };
+
+  // Function to filter products based on search query
+
   useEffect(() => {
     console.log("Products in Context:", products); // Debug log
   }, [products]);
@@ -109,6 +143,7 @@ const ShopContextProvider = (props) => {
     addToCart,
     getCartCount,
     updateCartQuantity,
+    getCartAmount,
   };
 
   return (

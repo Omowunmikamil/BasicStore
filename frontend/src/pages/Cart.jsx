@@ -120,8 +120,10 @@ const Cart = () => {
             </div>
           );
         })}
+        <div className="">
+          <CartTotal />
+        </div>
       </div>
-      <CartTotal />
     </div>
   );
 };
