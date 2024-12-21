@@ -4,6 +4,7 @@ import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Button from "../components/Button";
 import RelatedProducts from "../components/RelatedProducts";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const { productId } = useParams(); // Get product ID from the URL params
@@ -158,7 +159,12 @@ const Product = () => {
             </button>
             <Button
               onClick={() => {
-                addToCart(productData._id, color);
+                if (color) {
+                  addToCart(productData._id, color);
+                  toast.success("Product added to cart!");
+                } else {
+                  toast.error("Product select a color.");
+                }
               }}
               text={"ADD TO CART"}
             />
