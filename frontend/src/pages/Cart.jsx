@@ -5,36 +5,22 @@ import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 
 const Cart = () => {
-  const { products, cartItems, currency, updateCartQuantity, navigate } =
+  const { products, cartItems, currency, updateCartQuantity } =
     useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
-  const [counter, setCount] = useState(0);
 
-  // Handle the increment button click
-  const incrementHandler = () => {
-    setCount((prevCount) => prevCount + 1);
-    updateCartQuantity(productData._id, color, counter + 1); // Update the cart
-  };
-
-  // Handle the decrement button click
-  const decrementHandler = () => {
-    if (counter > 0) {
-      setCount((prevCount) => prevCount - 1);
-      updateCartQuantity(productData._id, color, counter - 1); // Update the cart
-    }
-  };
-
+  // Update cartData based on cartItems
   useEffect(() => {
     const tempCartData = [];
 
-    for (const items in cartItems) {
-      for (const item in cartItems[items]) {
-        if (cartItems[items][item]) {
+    for (const productId in cartItems) {
+      for (const color in cartItems[productId]) {
+        if (cartItems[productId][color]) {
           tempCartData.push({
-            _id: items,
-            color: item,
-            quantity: cartItems[items][item],
+            _id: productId,
+            color,
+            quantity: cartItems[productId][color],
           });
         }
       }
@@ -43,34 +29,50 @@ const Cart = () => {
     setCartData(tempCartData);
   }, [cartItems]);
 
+  // Handle increment
+  const incrementHandler = (productId, color, currentQuantity) => {
+    updateCartQuantity(productId, color, currentQuantity + 1);
+  };
+
+  // Handle decrement
+  const decrementHandler = (productId, color, currentQuantity) => {
+    if (currentQuantity > 0) {
+      updateCartQuantity(productId, color, currentQuantity - 1);
+    }
+  };
+
   return (
     <div className="">
       <HerderBanner h1={"Cart"} text1={"Home"} text2={"Cart"} href={"/cart"} />
 
       <div className="mt-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+        {/* Header */}
         <div className="grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] gap-4 mb-5">
           <p className="font-medium text-sm text-text">Product</p>
           <p className="font-medium text-sm text-text">Quantity</p>
           <p className="font-medium text-sm text-text">Remove</p>
         </div>
 
+        {/* Cart Items */}
         {cartData.map((item, index) => {
           const productData = products.find(
             (product) => product._id === item._id
           );
+
+          if (!productData) return null; // Skip if productData is missing
+
           return (
             <div
               key={index}
               className="text-gray-700 border-t border-b py-4 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
-              {/* Product image */}
+              {/* Product Info */}
               <div className="flex items-start gap-4 md:gap-6">
                 <img
                   src={productData.image}
                   alt={productData.name}
                   className="w-16 sm:w-20 bg-bestBg"
                 />
-                {/* Product Info */}
                 <div className="my-auto">
                   <p className="text-base font-medium">{productData.name}</p>
                   <div className="flex items-center gap-3">
@@ -85,26 +87,30 @@ const Cart = () => {
                 </div>
               </div>
 
-              {/* Product Quantity */}
+              {/* Quantity Controls */}
               <div className="flex gap-1 items-center my-auto">
-                {/* Decrement button */}
+                {/* Decrement Button */}
                 <button
                   className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
-                  onClick={decrementHandler}
-                  disabled={counter === 0}
+                  onClick={() =>
+                    decrementHandler(item._id, item.color, item.quantity)
+                  }
+                  disabled={item.quantity === 0}
                 >
                   -
                 </button>
 
                 {/* Quantity Display */}
                 <p className="bg-white text-gray-500 text-sm px-3 md:px-6 py-1 font-bold border border-gray-50 rounded-md shadow-md">
-                  {counter}
+                  {item.quantity}
                 </p>
 
-                {/* Increment button */}
+                {/* Increment Button */}
                 <button
                   className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
-                  onClick={incrementHandler}
+                  onClick={() =>
+                    incrementHandler(item._id, item.color, item.quantity)
+                  }
                 >
                   +
                 </button>
@@ -114,12 +120,14 @@ const Cart = () => {
               <img
                 src={assets.cartCross}
                 alt="Remove"
-                className="w-10"
+                className="w-10 cursor-pointer"
                 onClick={() => updateCartQuantity(item._id, item.color, 0)}
               />
             </div>
           );
         })}
+
+        {/* Cart Total */}
         <div className="">
           <CartTotal />
         </div>
