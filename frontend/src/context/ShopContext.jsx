@@ -73,7 +73,7 @@ const ShopContextProvider = (props) => {
     }
 
     if (quantity === 0) {
-      // Remove the item for the specified color if quantity is 0
+      // Handle item removal explicitly
       if (cartData[itemId][color]) {
         delete cartData[itemId][color];
       }
@@ -83,34 +83,13 @@ const ShopContextProvider = (props) => {
         delete cartData[itemId];
       }
     } else {
-      // Set or update the quantity for the specified color
-      cartData[itemId][color] = quantity;
+      // Clamp the quantity to a minimum of 1
+      const clampedQuantity = Math.max(quantity, 1);
+      cartData[itemId][color] = clampedQuantity;
     }
 
     setCartItems(cartData); // Update the cart state
   };
-
-  // const updateCartQuantity = async (itemId, color, quantity) => {
-  //   let cartData = structuredClone(cartItems); // Clone the cart data to avoid mutating the state directly
-
-  //   // Check if the item and color exist in the cart data
-  //   if (cartData[itemId]) {
-  //     if (quantity === 0) {
-  //       if (cartData[itemId][color]) {
-  //         delete cartData[itemId][color]; // Remove the item from the cart
-
-  //         // If no items left for the color, remove the color entry from the cart
-  //         if (Object.keys(cartData[itemId]).length === 0) {
-  //           delete cartData[itemId]; // If no items left for the item, remove the item entry from the cart
-  //         }
-  //       }
-  //     }
-  //   } else {
-  //     cartData[itemId][color] = quantity; // Update the quantity of the item, if it exists in the cart
-  //   }
-
-  //   setCartItems(cartData); // Update the cart data with the new data
-  // };
 
   // Function to calculate total amount of cart items
   const getCartAmount = () => {

@@ -36,7 +36,7 @@ const Cart = () => {
 
   // Handle decrement
   const decrementHandler = (productId, color, currentQuantity) => {
-    if (currentQuantity > 0) {
+    if (currentQuantity > 1) {
       updateCartQuantity(productId, color, currentQuantity - 1);
     }
   };
@@ -95,7 +95,6 @@ const Cart = () => {
                   onClick={() =>
                     decrementHandler(item._id, item.color, item.quantity)
                   }
-                  disabled={item.quantity === 0}
                 >
                   -
                 </button>
