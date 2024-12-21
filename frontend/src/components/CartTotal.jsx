@@ -10,20 +10,24 @@ const CartTotal = () => {
 
       {/* Cart Summary Section */}
       <div className="flex flex-col text-sm gap-2 mt-2">
-        <div className="flex justify-normal border-t border-b text-text gap-32 sm:gap-40 py-2 ">
-          <p className="">Subtotal</p>
-          <p className="text-orange">
-            {currency} {getCartAmount}.00
-          </p>
+        <div className="border-t border-b text-text py-2 ">
+          <div className="w-3/5 sm:w-2/6 flex justify-between">
+            <p className="">Subtotal</p>
+            <p className="text-orange">
+              {currency} {getCartAmount}.00
+            </p>
+          </div>
         </div>
-        <div className="flex justify-normal border-b text-text gap-32 sm:gap-[11.5rem] pb-2 ">
-          <p className="">Total</p>
-          <p className="text-orange">
-            {currency} {getCartAmount}.00
-          </p>
+        <div className="border-b text-text pb-2 ">
+          <div className="w-3/5 sm:w-2/6 flex justify-between">
+            <p className="">Total</p>
+            <p className="text-orange">
+              {currency} {getCartAmount}.00
+            </p>
+          </div>
         </div>
       </div>
-      <div className="flex gap-2 mt-5">
+      <div className="flex flex-col sm:flex-row gap-2 mt-5">
         <Button text={"UPDATE CART"} />
         <Button text={"CONTINUE SHOPPING"} />
         <Button text={"PROCEED TO CHECKOUT"} />
