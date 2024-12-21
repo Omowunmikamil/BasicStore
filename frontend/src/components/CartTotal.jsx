@@ -14,7 +14,16 @@ const CartTotal = () => {
           <div className="w-3/5 sm:w-2/6 flex justify-between">
             <p className="">Subtotal</p>
             <p className="text-orange">
-              {currency} {getCartAmount}.00
+              {currency} {getCartAmount()}.00
+            </p>
+          </div>
+        </div>
+        {/* Displaying shipping fee */}
+        <div className="border-b text-text pb-2">
+          <div className="w-3/5 sm:w-2/6 flex justify-between">
+            <p>Shipping Fee</p>
+            <p className="text-orange">
+              {currency} {deliveryFee}.00
             </p>
           </div>
         </div>
@@ -22,7 +31,8 @@ const CartTotal = () => {
           <div className="w-3/5 sm:w-2/6 flex justify-between">
             <p className="">Total</p>
             <p className="text-orange">
-              {currency} {getCartAmount}.00
+              {currency}
+              {getCartAmount() === 0 ? 0 : getCartAmount() + deliveryFee}.00
             </p>
           </div>
         </div>
