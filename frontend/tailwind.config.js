@@ -11,6 +11,7 @@ export default {
         bestBg: "#F6F6F6",
         bestBorder: "#E8E8E8",
         tesBorder: "#f2f2f2",
+        checkBord: "#EEE",
         text: "#272727",
       },
     },

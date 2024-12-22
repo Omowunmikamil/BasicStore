@@ -143,7 +143,11 @@ const Product = () => {
             {/* Increment button */}
             <button
               className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
-              onClick={incrementHandler}
+              onClick={() =>
+                color
+                  ? incrementHandler()
+                  : toast.error("Please select a color.")
+              }
             >
               +
             </button>
@@ -158,14 +162,11 @@ const Product = () => {
               BUY NOW
             </button>
             <Button
-              onClick={() => {
-                if (color) {
-                  addToCart(productData._id, color);
-                  toast.success("Product added to cart!");
-                } else {
-                  toast.error("Product select a color.");
-                }
-              }}
+              onClick={() =>
+                color
+                  ? addToCart(productData._id, color)
+                  : toast.error("Product select a color.")
+              }
               text={"ADD TO CART"}
             />
           </div>

@@ -9,7 +9,6 @@ import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
-import PlaceOrder from "./pages/PlaceOrder";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,6 +17,7 @@ import InstaShop from "./components/InstaShop";
 import SearchBar from "./components/SearchBar";
 import Order from "./pages/Order";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   return (
@@ -37,7 +37,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/product/:productId" element={<Product />} />
-          <Route path="/place-order" element={<PlaceOrder />} />
+          <Route path="/place-order" element={<Checkout />} />
           <Route path="/order" element={<Order />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
