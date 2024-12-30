@@ -3,9 +3,10 @@ import { ShopContext } from "../context/ShopContext";
 import HerderBanner from "../components/HerderBanner";
 import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
+import Button from "../components/Button";
 
 const Cart = () => {
-  const { products, cartItems, currency, updateCartQuantity } =
+  const { products, cartItems, currency, updateCartQuantity, navigate } =
     useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
@@ -129,6 +130,18 @@ const Cart = () => {
         {/* Cart Total */}
         <div className="">
           <CartTotal />
+
+          <div className="flex flex-col sm:flex-row gap-2 mt-6">
+            <Button text={"UPDATE CART"} onClick={() => navigate("/shop")} />
+            <Button
+              text={"CONTINUE SHOPPING"}
+              onClick={() => navigate("/shop")}
+            />
+            <Button
+              text={"PROCEED TO CHECKOUT"}
+              onClick={() => navigate("/place-order")}
+            />
+          </div>
         </div>
       </div>
     </div>

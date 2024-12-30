@@ -1,10 +1,8 @@
 import { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
-import Button from "./Button";
 
 const CartTotal = () => {
-  const { currency, deliveryFee, getCartAmount, navigate } =
-    useContext(ShopContext);
+  const { currency, deliveryFee, getCartAmount } = useContext(ShopContext);
   return (
     <div className="mt-12">
       <h2 className="text-start">Cart Totals</h2>
@@ -38,14 +36,6 @@ const CartTotal = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col sm:flex-row gap-2 mt-6">
-        <Button text={"UPDATE CART"} onClick={() => navigate("/shop")} />
-        <Button text={"CONTINUE SHOPPING"} onClick={() => navigate("/shop")} />
-        <Button
-          text={"PROCEED TO CHECKOUT"}
-          onClick={() => navigate("/place-order")}
-        />
       </div>
     </div>
   );

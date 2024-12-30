@@ -1,8 +1,13 @@
-import React from "react";
+import { useContext, useState } from "react";
 import HerderBanner from "../components/HerderBanner";
 import CartTotal from "../components/CartTotal";
+import { ShopContext } from "../context/ShopContext";
+import Button from "../components/Button";
 
 const Checkout = () => {
+  const { navigate } = useContext(ShopContext);
+  const [method, setMethod] = useState("dbt");
+
   return (
     <div>
       <HerderBanner
@@ -156,10 +161,76 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        {/* Shipping Address */}
+
+        {/* Payment Methods */}
         <div className="mt-8">
           <CartTotal />
+          <div className="flex flex-col gap-3 mt-6">
+            <div
+              className="flex items-center gap-3 cursor-pointer"
+              onClick={() => setMethod("dbt")}
+            >
+              <p
+                className={`size-3.5 border rounded-full cursor-pointer ${
+                  method === "dbt" ? "bg-blue-400" : ""
+                }`}
+              ></p>
+              <p className="text-lg text-gray-600 font-normal">
+                Direct Bank Transfer
+              </p>
+            </div>
+
+            {/* Check payments */}
+            <div
+              className="flex items-center gap-3 cursor-pointer"
+              onClick={() => setMethod("checkP")}
+            >
+              <p
+                className={`size-3.5 border rounded-full cursor-pointer ${
+                  method === "checkP" ? "bg-blue-400" : ""
+                }`}
+              ></p>
+              <p className="text-lg text-gray-600 font-normal">
+                Check payments
+              </p>
+            </div>
+
+            {/* Cash on Delivery */}
+            <div
+              className="flex items-center gap-3 cursor-pointer"
+              onClick={() => setMethod("cod")}
+            >
+              <p
+                className={`size-3.5 border rounded-full cursor-pointer ${
+                  method === "cod" ? "bg-blue-400" : ""
+                }`}
+              ></p>
+              <p className="text-lg text-gray-600 font-normal">
+                Cash on Delivery
+              </p>
+            </div>
+
+            {/* PayPal */}
+            <div
+              className="flex items-center gap-3 cursor-pointer"
+              onClick={() => setMethod("paypal")}
+            >
+              <p
+                className={`size-3.5 border rounded-full cursor-pointer ${
+                  method === "paypal" ? "bg-blue-400" : ""
+                }`}
+              ></p>
+              <p className="text-lg text-gray-600 font-normal">PayPal</p>
+            </div>
+          </div>
         </div>
+
+        {/* Place Order Button */}
+        <Button
+          text={"PLACE AN ORDER"}
+          onClick={() => navigate("/order")}
+          className={"mt-6"}
+        />
       </div>
     </div>
   );
