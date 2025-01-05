@@ -16,7 +16,7 @@ const HerderBanner = (props) => {
           <div className="flex justify-between w-32 md:w-40">
             <a
               href="/"
-              className="text-sm md:text-base text-gray-100 text-center"
+              className="text-sm md:text-base text-gray-100 text-center cursor-pointer"
             >
               {props.text1}
             </a>
@@ -25,7 +25,7 @@ const HerderBanner = (props) => {
             </span>
             <a
               href={props.href}
-              className="text-sm md:text-base text-gray-100 text-center"
+              className="text-sm md:text-base text-gray-100 text-center cursor-pointer"
             >
               {props.text2}
             </a>
