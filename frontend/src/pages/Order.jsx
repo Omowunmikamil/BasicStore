@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 
 const Order = () => {
@@ -32,12 +32,23 @@ const Order = () => {
                   <p className="">Color: black</p>
                 </div>
                 <p className="mt-2">
-                  Date: <span className="text-gray-400">30-12-2-24</span>
+                  Date: <span className="text-gray-400">2-1-2025</span>
                 </p>
               </div>
             </div>
 
             {/* Order Status */}
+            <div className="flex justify-between md:w-1/2">
+              <div className="flex items-center gap-2">
+                <p className="min-w-2 h-2 rounded-full bg-green-400"></p>
+                <p className="text-sm md:text-base">Ready to ship</p>
+              </div>
+
+              {/* Track Order */}
+              <button className="text-sm font-medium border rounded-sm py-2 px-3 cursor-pointer shadow-sm">
+                Track Order
+              </button>
+            </div>
           </div>
         ))}
       </div>
