@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 function Footer() {
@@ -51,19 +52,19 @@ function Footer() {
           <ul className="flex flex-col gap-1 text-gray-600">
             {/* List of company-related links with hover animation */}
             <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
-              HOME
+              <Link to="/">HOME</Link>
             </li>
             <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
-              ABOUT
+              <Link to="/about">ABOUT</Link>
             </li>
             <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
-              SHOP
+              <Link to="/shop">SHOP</Link>
             </li>
             <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
-              BLOGS
+              <Link to="/blogs">BLOGS</Link>
             </li>
             <li className="text-xs hover:text-orange hover:translate-x-2 ease-in-out duration-300">
-              CONTACT
+              <Link to="/contact">CONTACT</Link>
             </li>
           </ul>
         </div>
@@ -144,7 +145,7 @@ function Footer() {
           </div>
 
           <p className="text-center text-gray-500 text-sm py-5">
-            &copy;Copyright 2024 BasicStore. Designed by Omowunmi.
+            &copy;Copyright 2024 BasicStore. Designed by Templates Jungle.
           </p>
         </div>
       </div>
