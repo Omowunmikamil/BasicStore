@@ -3,6 +3,7 @@ import HerderBanner from "../components/HerderBanner";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import BlogItem from "../components/BlogItem";
+import { differenceInDays } from "date-fns";
 
 const Blogs = () => {
   const { blogPosts, search, showSearch } = useContext(ShopContext);
@@ -120,23 +121,45 @@ const Blogs = () => {
     setFilterPosts(blogPostsCopy);
   };
 
-  // Sort the filtered blogPosts based on the selected sort type (Low-High, High-Low, or Relevant)
   const sortPosts = () => {
-    let filterPostsCopy = filterPosts.slice(); // Copy the filtered blogPosts array
+    const today = new Date(); // Get the current date
 
-    switch (sortType) {
-      case "most-recent":
-        setFilterPosts(filterPostsCopy.sort((a, b) => a.price - b.price)); // Sort by price low to high
-        break;
+    const categorizedPosts = {
+      latest: [],
+      mostRecent: [],
+      older: [],
+      muchOlder: [],
+    };
 
-      case "older":
-        setFilterPosts(filterPostsCopy.sort((a, b) => b.price - a.price)); // Sort by price high to low
-        break;
+    // Categorize posts based on their date
+    filterPosts.forEach((post) => {
+      const postDate = new Date(post.date); // Assume `post.date` is a valid date string
+      const daysAgo = differenceInDays(today, postDate);
 
-      default:
-        applyFilters(); // Default sort by "relevant" (without changing the order)
-        break;
-    }
+      if (daysAgo <= 1) {
+        // Within yesterday and today
+        categorizedPosts.latest.push(post);
+      } else if (daysAgo <= 14) {
+        // Within 7 days to 2 weeks ago
+        categorizedPosts.mostRecent.push(post);
+      } else if (daysAgo <= 28) {
+        // Within 3 weeks to 4 weeks ago
+        categorizedPosts.older.push(post);
+      } else {
+        // More than 4 weeks ago
+        categorizedPosts.muchOlder.push(post);
+      }
+    });
+
+    // Combine categories into a single array
+    const sortedPosts = [
+      ...categorizedPosts.latest,
+      ...categorizedPosts.mostRecent,
+      ...categorizedPosts.older,
+      ...categorizedPosts.muchOlder,
+    ];
+
+    setFilterPosts(sortedPosts); // Update the state with the sorted posts
   };
 
   // useEffect hook to apply filters whenever categories, subcategories, or search query changes
@@ -423,11 +446,14 @@ const Blogs = () => {
                 <option value="latest" className="">
                   Latest
                 </option>
-                <option value="most-recent" className="">
+                <option value="mostRecent" className="">
                   Most Recent
                 </option>
                 <option value="older" className="">
                   Older
+                </option>
+                <option value="muchOlder" className="">
+                  muchOlder
                 </option>
               </select>
             </div>
@@ -439,6 +465,7 @@ const Blogs = () => {
                   key={index}
                   id={item._id}
                   image={item.image}
+                  date={item.date}
                   blogInfo={item.blogInfo}
                   title={item.title}
                 />
