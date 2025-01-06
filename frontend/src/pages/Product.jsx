@@ -114,7 +114,7 @@ const Product = () => {
                 <button
                   key={index}
                   onClick={() => setColor(item)}
-                  className={`border py-1 px-2 rounded-md mt-2 text-gray-600 text-sm cursor-pointer ${
+                  className={`border py-1 px-[5px] md:px-2 rounded-md mt-2 text-gray-600 text-sm cursor-pointer ${
                     item === color ? "border-orange" : ""
                   }`}
                 >
@@ -180,7 +180,7 @@ const Product = () => {
 
       {/* Description,  Additional Info, and Review */}
       <div className="mt-20">
-        <div className="flex justify-center gap-10 border-b border-tesBorder pb-4">
+        <div className="flex justify-center gap-4 md:gap-8 border-b border-tesBorder pb-4">
           <p className="text-orange text-sm md:text-2xl">Description</p>
           <p className=" text-sm md:text-2xl">Additional Infomations</p>
           <p className=" text-sm md:text-2xl">Reviews (2)</p>
