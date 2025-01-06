@@ -152,7 +152,7 @@ const Blogs = () => {
   return (
     <div>
       <HerderBanner h1={"Blogs"} text1={"Home"} text2={"Blogs"} />
-      <div className="mt-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+      <div className="mt-16 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <div className="flex flex-col lg:flex-row gap-1 sm:gap-10 pt-10">
           {/* responsive */}
           <div className="lg:hidden min-w-60 md:min-w-52">
@@ -177,7 +177,7 @@ const Blogs = () => {
               </button>
             </div>
 
-            {/* Filter by Brand */}
+            {/* Filters */}
             <p
               onClick={() => setShowFilter(!showFilter)} // Toggle the filter visibility
               className="flex items-center text-xl my-2 gap-2 cursor-pointer"
@@ -433,7 +433,7 @@ const Blogs = () => {
             </div>
 
             {/* Displaying Filtered and Sorted Products */}
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 gap-y-6">
               {records.map((item, index) => (
                 <BlogItem
                   key={index}
