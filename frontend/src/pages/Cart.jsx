@@ -65,10 +65,10 @@ const Cart = () => {
           return (
             <div
               key={index}
-              className="text-gray-700 border-t border-b py-4 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
+              className="text-gray-700 border-t border-b py-4 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-2 sm:gap-4"
             >
               {/* Product Info */}
-              <div className="flex items-start gap-4 md:gap-6">
+              <div className="flex items-start gap-3 md:gap-6">
                 <img
                   src={productData.image}
                   alt={productData.name}
@@ -76,7 +76,7 @@ const Cart = () => {
                 />
                 <div className="my-auto">
                   <p className="text-base font-medium">{productData.name}</p>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
                     <p className="text-base text-orange font-normal">
                       {currency}
                       {productData.price}
@@ -89,7 +89,7 @@ const Cart = () => {
               </div>
 
               {/* Quantity Controls */}
-              <div className="flex gap-1 items-center my-auto">
+              <div className="md:flex gap-1 items-center my-auto hidden">
                 {/* Decrement Button */}
                 <button
                   className="bg-white text-gray-500 text-sm px-2 py-1 font-bold border border-gray-50 rounded-md cursor-pointer hover:border-orange shadow-md"
@@ -115,6 +115,21 @@ const Cart = () => {
                   +
                 </button>
               </div>
+
+              {/* Quantity Control For Small Screen */}
+              {/* Quantity input */}
+              <input
+                type="number"
+                min={1}
+                className="max-w-10 sm:max-w-20 border px-1 py-1 sm:px-2 flex md:hidden"
+                defaultValue={item.quantity} // Set the default quantity
+                onChange={(e) => {
+                  const newQuantity = Number(e.target.value);
+                  if (newQuantity > 0) {
+                    updateCartQuantity(item._id, item.color, newQuantity);
+                  }
+                }}
+              />
 
               {/* Remove Button */}
               <img

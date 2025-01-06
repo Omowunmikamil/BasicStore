@@ -156,7 +156,7 @@ const Product = () => {
           {/* Buy Now and  Add to Cart Button */}
           <div className="flex gap-2 mt-4">
             <button
-              className="bg-orange text-xs md-text-sm text-white py-3 px-8 rounded-full hover:bg-orangehover hover:text-text"
+              className="bg-orange text-xs md-text-sm text-white py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-orangehover hover:text-text"
               onClick={handleBuyNowNavigate}
             >
               BUY NOW
