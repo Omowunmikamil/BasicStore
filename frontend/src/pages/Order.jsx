@@ -16,7 +16,7 @@ const Order = () => {
             key={index}
             className="flex flex-col md:flex-row md:items-center md:justify-between text-gray-700 border-t border-b py-4 gap-4"
           >
-            <div className="flex items-start gap-6 text-sm">
+            <div className="flex items-start gap-4 text-sm">
               <img
                 src={items.image[0]}
                 alt={items.name}
@@ -24,11 +24,11 @@ const Order = () => {
               />
               <div>
                 <p className="sm:text-base font-medium">{items.name}</p>
-                <div className="flex items-center text-base text-gray-700 gap-3 mt-2">
-                  <p className="text-lg text-orange">
+                <div className="flex items-center text-gray-700 gap-3 mt-2">
+                  <p className="text-lg font-medium text-orange">
                     {currency} {items.price}
                   </p>
-                  <p>Quantity 1</p>
+                  <p>Quantity: 1</p>
                   <p className="">Color: black</p>
                 </div>
                 <p className="mt-2">
