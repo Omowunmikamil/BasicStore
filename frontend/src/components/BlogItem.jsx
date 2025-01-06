@@ -13,10 +13,10 @@ const BlogItem = ({ id, image, blogInfo, title }) => {
           />
         </div>
         <div className="mt-3">
-          <p className="text-xs sm:text-sm text-gray-500 text-center">
+          <p className="text-xs sm:text-[18px] text-gray-400 text-center">
             {blogInfo}
           </p>
-          <p className="text-sm sm:text-[20px] font-bold text-gray-700 text-center">
+          <p className="text-sm sm:text-[20px] font-semibold text-gray-700 text-center mt-1">
             {title}
           </p>
         </div>
