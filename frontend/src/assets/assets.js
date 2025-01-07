@@ -185,7 +185,7 @@ export const blogPosts = [
     latestpost: true,
     category: "Laptops",
     subCategory: "Modern",
-    date: "2025-01-01",
+    date: "Jan 01, 2025",
   },
   {
     _id: "aaaaab",
@@ -195,7 +195,7 @@ export const blogPosts = [
     latestpost: false,
     category: "Watches",
     subCategory: "Modern",
-    date: "2024-09-05",
+    date: "Sep 05, 2024",
   },
   {
     _id: "aaaaac",
@@ -205,7 +205,7 @@ export const blogPosts = [
     latestpost: true,
     category: "Accessories",
     subCategory: "Modern",
-    date: "2024-12-05",
+    date: "Dec 05, 2024",
   },
   {
     _id: "aaaaac",
@@ -214,7 +214,7 @@ export const blogPosts = [
     title: "Best Airpod That You Must Get It",
     category: "Accessories",
     subCategory: "White",
-    date: "2024-08-05",
+    date: "Aug 05, 2024",
   },
   {
     _id: "aaaaad",
@@ -223,7 +223,7 @@ export const blogPosts = [
     title: "Why People are Obsessed With Iphones",
     category: "Phones",
     subCategory: "Mobile",
-    date: "2024-09-05",
+    date: "Sep 05, 2024",
   },
   {
     _id: "aaaaae",
@@ -232,7 +232,7 @@ export const blogPosts = [
     title: "How To Setup Your GoPro",
     category: "Accessories",
     subCategory: "Modern",
-    date: "2024-12-05",
+    date: "Dec 05, 2024",
   },
   {
     _id: "aaaaaf",
@@ -241,7 +241,7 @@ export const blogPosts = [
     title: "Why People Are Buying These PlayStations",
     category: "Accessories",
     subCategory: "Modern",
-    date: "2024-11-05",
+    date: "Nov 05, 2024",
   },
   {
     _id: "aaaaag",
@@ -250,7 +250,7 @@ export const blogPosts = [
     title: "You Just Need To Use This Headset To Listen To Music",
     category: "Accessories",
     subCategory: "Modern",
-    date: "2024-12-05",
+    date: "Dec 05, 2024",
   },
   {
     _id: "aaaaah",
@@ -259,7 +259,7 @@ export const blogPosts = [
     title: "Make Your Working Space Need And Clean",
     category: "Accessories",
     subCategory: "Modern",
-    date: "2024-10-05",
+    date: "Oct 05, 2024",
   },
   {
     _id: "aaaaai",
@@ -269,7 +269,7 @@ export const blogPosts = [
     title: "Top 10 small cameras in the world",
     category: "Accessories",
     subCategory: "Modern",
-    date: "2025-01-06",
+    date: "Jan 06, 2025",
   },
   {
     _id: "aaaaaj",
@@ -279,7 +279,7 @@ export const blogPosts = [
     title: "Technology hack that you don’t know",
     category: "Phones",
     subCategory: "Mobile",
-    date: "2025-01-04",
+    date: "Jan 04, 2025",
   },
   {
     _id: "aaaaak",
@@ -289,7 +289,7 @@ export const blogPosts = [
     title: "Get some cool gadgets in this year",
     category: "Accessories",
     subCategory: "Modern",
-    date: "2025-01-03",
+    date: "Jan 03, 2025",
   },
 ];
 

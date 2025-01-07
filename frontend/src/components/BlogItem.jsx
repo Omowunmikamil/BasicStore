@@ -15,7 +15,7 @@ const BlogItem = ({ id, image, blogInfo, date, title }) => {
         </div>
         <div className="mt-3">
           <p className="text-xs sm:text-[18px] text-gray-400 text-center">
-            {format(new Date(date), "yyyy-MM-dd")} - {blogInfo}
+            {format(new Date(date), "MMM yy, yyyy")} - {blogInfo}
           </p>
           <p className="text-sm sm:text-[20px] font-semibold text-gray-700 text-center mt-1">
             {title}

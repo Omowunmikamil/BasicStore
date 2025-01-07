@@ -122,44 +122,42 @@ const Blogs = () => {
   };
 
   const sortPosts = () => {
-    const today = new Date(); // Get the current date
+    if (!filterPosts || filterPosts.length === 0) {
+      console.warn("No posts to sort.");
+      return;
+    }
 
-    const categorizedPosts = {
-      latest: [],
-      mostRecent: [],
-      older: [],
-      muchOlder: [],
-    };
+    // Create a shallow copy of filterPosts
+    let filterPostsCopy = [...filterPosts];
 
-    // Categorize posts based on their date
-    filterPosts.forEach((post) => {
-      const postDate = new Date(post.date); // Assume `post.date` is a valid date string
-      const daysAgo = differenceInDays(today, postDate);
+    console.log("Before sorting:", filterPostsCopy);
+    console.log("Sort type:", sortType);
 
-      if (daysAgo <= 1) {
-        // Within yesterday and today
-        categorizedPosts.latest.push(post);
-      } else if (daysAgo <= 14) {
-        // Within 7 days to 2 weeks ago
-        categorizedPosts.mostRecent.push(post);
-      } else if (daysAgo <= 28) {
-        // Within 3 weeks to 4 weeks ago
-        categorizedPosts.older.push(post);
-      } else {
-        // More than 4 weeks ago
-        categorizedPosts.muchOlder.push(post);
-      }
-    });
+    const getDate = (date) => new Date(date).getTime() || 0;
 
-    // Combine categories into a single array
-    const sortedPosts = [
-      ...categorizedPosts.latest,
-      ...categorizedPosts.mostRecent,
-      ...categorizedPosts.older,
-      ...categorizedPosts.muchOlder,
-    ];
+    switch (sortType) {
+      case "latest":
+        // Sort by latest dates (newest first)
+        setFilterPosts(
+          filterPostsCopy.sort((a, b) => getDate(b.date) - getDate(a.date))
+        );
+        break;
 
-    setFilterPosts(sortedPosts); // Update the state with the sorted posts
+      case "older":
+        // Sort by older dates (oldest first)
+        setFilterPosts(
+          filterPostsCopy.sort((a, b) => getDate(a.date) - getDate(b.date))
+        );
+        break;
+
+      default:
+        // Apply default filters or reset sorting
+        console.log("Applying default filters...");
+        applyFilters();
+        break;
+    }
+
+    console.log("After sorting:", filterPostsCopy);
   };
 
   // useEffect hook to apply filters whenever categories, subcategories, or search query changes
@@ -440,34 +438,29 @@ const Blogs = () => {
 
               {/* Sort Product By */}
               <select
+                value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
                 className="outline-none"
               >
                 <option value="latest" className="">
                   Latest
                 </option>
-                <option value="mostRecent" className="">
-                  Most Recent
-                </option>
                 <option value="older" className="">
                   Older
-                </option>
-                <option value="muchOlder" className="">
-                  muchOlder
                 </option>
               </select>
             </div>
 
             {/* Displaying Filtered and Sorted Products */}
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 gap-y-6">
-              {records.map((item, index) => (
+              {records.map((post, index) => (
                 <BlogItem
                   key={index}
-                  id={item._id}
-                  image={item.image}
-                  date={item.date}
-                  blogInfo={item.blogInfo}
-                  title={item.title}
+                  id={post._id}
+                  image={post.image}
+                  date={post.date}
+                  blogInfo={post.blogInfo}
+                  title={post.title}
                 />
               ))}
             </div>
