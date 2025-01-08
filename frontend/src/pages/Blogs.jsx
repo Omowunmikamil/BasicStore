@@ -131,7 +131,6 @@ const Blogs = () => {
     let filterPostsCopy = [...filterPosts];
 
     console.log("Before sorting:", filterPostsCopy);
-    console.log("Sort type:", sortType);
 
     const getDate = (date) => new Date(date).getTime() || 0;
 
