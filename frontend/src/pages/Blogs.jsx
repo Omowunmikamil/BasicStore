@@ -3,7 +3,7 @@ import HerderBanner from "../components/HerderBanner";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import BlogItem from "../components/BlogItem";
-import { differenceInDays } from "date-fns";
+import LatestBlog from "../components/LatestBlog";
 
 const Blogs = () => {
   const { blogPosts, search, showSearch } = useContext(ShopContext);
@@ -172,8 +172,8 @@ const Blogs = () => {
   return (
     <div>
       <HerderBanner h1={"Blogs"} text1={"Home"} text2={"Blogs"} />
-      <div className="mt-16 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-        <div className="flex flex-col lg:flex-row gap-1 sm:gap-10 pt-10">
+      <div className="mt-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+        <div className="flex flex-col lg:flex-row gap-1 sm:gap-10">
           {/* responsive */}
           <div className="lg:hidden min-w-60 md:min-w-52">
             <div className="w-full h-12 flex items-center gap-3 pl-2 rounded-lg bg-white border border-tesBorder shadow-md mb-6">
@@ -211,11 +211,14 @@ const Blogs = () => {
                 alt="dropdown"
               />
             </p>
+
             {/* Filter by Category */}
             <div
               className={` py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
             >
-              <p className="mb-3 text-base text-text font-medium">Category</p>
+              <p className="mb-3 text-base text-text font-medium underline">
+                Category
+              </p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
                 {/* Category checkboxes */}
                 <p className=" flex gap-2">
@@ -261,7 +264,9 @@ const Blogs = () => {
             <div
               className={`py-3 my-5 ${showFilter ? " " : "hidden"}  lg:block`}
             >
-              <p className="mb-3 text-base text-text font-medium">Tags</p>
+              <p className="mb-3 text-base text-text font-medium underline">
+                Tags
+              </p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
                 {/* Subcategory checkboxes */}
                 <p className=" flex gap-2">
@@ -300,6 +305,27 @@ const Blogs = () => {
                   />
                   Modern
                 </p>
+              </div>
+            </div>
+
+            {/* Lastest Blog Post */}
+            <div className="py-3 my-5">
+              <LatestBlog />
+            </div>
+
+            {/* Social Links */}
+            <div
+              className={`py-3 my-5 ${showFilter ? " " : "hidden"} lg:block`}
+            >
+              <p className="b-3 text-base text-text font-medium underline">
+                Social Links
+              </p>
+              <div className="flex flex-col gap-2 text-sm font-light text-text">
+                <p className=" flex gap-2">Facebook</p>
+                <p className=" flex gap-2">Instagram</p>
+                <p className=" flex gap-2">Twitter</p>
+                <p className=" flex gap-2">Youtube</p>
+                <p className=" flex gap-2">Pinterest</p>
               </div>
             </div>
           </div>
@@ -338,7 +364,9 @@ const Blogs = () => {
             <div
               className={` py-3 mt-6 ${showFilter ? " " : "hidden"}  lg:block`}
             >
-              <p className="mb-3 text-base text-text font-medium">Category</p>
+              <p className="mb-3 text-base text-text font-medium underline">
+                Category
+              </p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
                 {/* Category checkboxes */}
                 <p className=" flex gap-2">
@@ -384,7 +412,9 @@ const Blogs = () => {
             <div
               className={`py-3 my-5 ${showFilter ? " " : "hidden"}  lg:block`}
             >
-              <p className="mb-3 text-base text-text font-medium">Tags</p>
+              <p className="mb-3 text-base text-text font-medium underline">
+                Tags
+              </p>
               <div className="flex flex-col gap-2 text-sm font-light text-text">
                 {/* Subcategory checkboxes */}
                 <p className=" flex gap-2">
@@ -422,6 +452,37 @@ const Blogs = () => {
                     onChange={toggleSubCategory} // Toggle subcategory selection
                   />
                   Modern
+                </p>
+              </div>
+            </div>
+
+            {/* Lastest Blog Post */}
+            <div className="py-3 my-5">
+              <LatestBlog />
+            </div>
+
+            {/* Social Links */}
+            <div
+              className={`py-3 my-5 ${showFilter ? " " : "hidden"} lg:block`}
+            >
+              <p className="b-3 text-base text-text font-medium underline">
+                Social Links
+              </p>
+              <div className="flex flex-col gap-2 text-sm font-light text-text">
+                <p className=" flex gap-2">
+                  <a href="">Facebook</a>
+                </p>
+                <p className=" flex gap-2">
+                  <a href="">Instagram</a>
+                </p>
+                <p className=" flex gap-2">
+                  <a href="">Twitter</a>
+                </p>
+                <p className=" flex gap-2">
+                  <a href="">Youtube</a>
+                </p>
+                <p className=" flex gap-2">
+                  <a href="">Pinterest</a>
                 </p>
               </div>
             </div>
