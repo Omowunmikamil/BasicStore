@@ -31,7 +31,7 @@ const Navbar = () => {
 
         {/* Main Nav links, Hidden on smaller Screen */}
         <div className="flex justify-between items-center lg:w-[650px]">
-          <ul className="hidden lg:flex text-gray-700 text-sm gap-5">
+          <ul className="hidden lg:flex text-gray-700 text-base gap-5">
             <NavLink to="/">HOME</NavLink>
 
             <NavLink to="/about">ABOUT</NavLink>

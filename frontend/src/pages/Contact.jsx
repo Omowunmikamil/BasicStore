@@ -1,6 +1,7 @@
 import { useState } from "react";
 import HerderBanner from "../components/HerderBanner";
 import { toast } from "react-toastify";
+import { assets } from "../assets/assets";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -66,13 +67,13 @@ const Contact = () => {
     <div>
       <HerderBanner h1={"Contact"} text1={"Home"} text2={"Contact"} />
       <div className="mt-16 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-        <div className="flex flex-col sm:flex-row justify-between gap-6">
+        <div className="flex flex-col sm:flex-row justify-between gap-7">
           {/* contact Info */}
           <div className="flex flex-col w-full md:w-[700px]">
             <h2 className="text-xl font-bold text-text text-start mb-2">
               Contact Info
             </h2>
-            <p className="text-sm text-text">
+            <p className="text-base text-text">
               Tortor dignissim convallis aenean et tortor at risus viverra
               adipiscing.
             </p>
@@ -81,21 +82,21 @@ const Contact = () => {
                 <p className="mb-3 text-base text-text font-medium underline">
                   Office
                 </p>
-                <p className="text-sm text-text">
+                <p className="text-base text-text">
                   730 Glenstone Ave 65802, Springfield, US
                 </p>
-                <p className="text-sm text-text">+123 222 333 44</p>
-                <p className="text-sm text-gray-600">info@yourinfo.com</p>
+                <p className="text-base text-text">+123 222 333 44</p>
+                <p className="text-base text-gray-600">info@yourinfo.com</p>
               </div>
               <div className="flex flex-col gap-2">
                 <p className="mb-3 text-base text-text font-medium underline">
                   Management
                 </p>
-                <p className="text-sm text-text">
+                <p className="text-base text-text">
                   730 Glenstone Ave 65802, Springfield, US
                 </p>
-                <p className="text-sm text-gray-600">+1 123 456 7890</p>
-                <p className="text-sm text-text">info@yourinfo.com</p>
+                <p className="text-base text-gray-600">+1 123 456 7890</p>
+                <p className="text-base text-text">info@yourinfo.com</p>
               </div>
             </div>
           </div>
@@ -105,7 +106,7 @@ const Contact = () => {
             <h2 className="text-xl font-bold text-text text-start mb-2">
               Any Questions?
             </h2>
-            <p className="text-sm text-text">
+            <p className="text-base text-text">
               Use the form below to get in touch with us.
             </p>
 
@@ -196,6 +197,43 @@ const Contact = () => {
                 Submit
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Our Store */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-7 mt-16">
+          <img
+            src={assets.contactImg}
+            alt="Contact image"
+            className="rounded-xl w-full md:w-[620px]"
+          />
+          <div className="flex flex-col w-full md:w-[720px] gap-3">
+            <h2 className="text-left m-0">Our Stores</h2>
+            <p className="text-base text-text">
+              You can also directly buy products from our stores.
+            </p>
+            <div className="flex flex-col justify-between md:flex-row mt-5 gap-6">
+              <div className="flex flex-col gap-2">
+                <p className="mb-3 text-base text-text font-medium underline">
+                  USA
+                </p>
+                <p className="text-base text-text">
+                  730 Glenstone Ave 65802, US
+                </p>
+                <p className="text-base text-text">+123 666 777 88</p>
+                <p className="text-base text-gray-600">info@yourinfo.com</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="mb-3 text-base text-text font-medium underline">
+                  France
+                </p>
+                <p className="text-base text-text">
+                  13 Rue Montmartre 75001, Paris, France
+                </p>
+                <p className="text-base text-gray-600">+123 222 333 44</p>
+                <p className="text-base text-text">info@yourinfo.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
